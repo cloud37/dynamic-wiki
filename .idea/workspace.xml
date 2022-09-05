@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e79102a1-04a4-4a4c-a7c7-78f119ba6fdd" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Navigation" />
+        <option value="Category" />
+        <option value="Entry" />
+        <option value="PatchouliPage" />
+        <option value="TextPage" />
+        <option value="TypeScript File" />
+        <option value="Navigation2" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EOIYWs6wljEp3qgWbbfa55ZfUY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Dominik/IdeaProjects/OnlineWiki/src/lib/components/navigation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Dominik\\IdeaProjects\\OnlineWiki\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Users\\Dominik\\IdeaProjects\\OnlineWiki\\node_modules\\typescript\\lib",
+    "typescript.add.unambiguous.imports.on.the.fly": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\navigation" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\routes\category\[category]\entry\[entry]" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\patchouli" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\routes\category\[category]" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\navigation" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\setup" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\setup\serverside" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e79102a1-04a4-4a4c-a7c7-78f119ba6fdd" name="Changes" comment="" />
+      <created>1662460253520</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662460253520</updated>
+      <workItem from="1662460255857" duration="3916000" />
+      <workItem from="1662464938881" duration="7770000" />
+      <workItem from="1662526804909" duration="28203000" />
+      <workItem from="1662570166116" duration="4636000" />
+      <workItem from="1662577126854" duration="536000" />
+      <workItem from="1662613791376" duration="10886000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
