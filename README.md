@@ -5,3 +5,7 @@ and display it in a human-readable format.
 
 Expansions in the far future could be making it configurable via environment variables,
 so that arbitrary mods and repositories could be displayed
+
+## Development Information
+
+Currently requires a locally running CORS Anwhere proxy.
