@@ -9,7 +9,7 @@
     import {afterNavigate} from "$app/navigation";
     import {storeCurrentUrl} from "$lib/stores/uiState";
     import NavigationDrawer from "$lib/components/navigation/NavigationDrawer.svelte";
-    import Navigation2 from "$lib/components/navigation/Navigation2.svelte";
+    import Navigation from "$lib/components/navigation/Navigation.svelte";
 
     // Lifecycle Events
     afterNavigate(() => {
@@ -40,12 +40,10 @@
         <AppBar><a href="/"><h1 class="text-center text-2xl">Ars Nouveau Wiki</h1></a></AppBar>
     </svelte:fragment>
     <svelte:fragment slot="sidebarLeft">
-        <Navigation2 class="hidden lg:block w-[300px]"/>
+        <Navigation class="hidden lg:block w-[300px]"/>
     </svelte:fragment>
     <svelte:fragment slot="pageFooter">
         <footer class="flex justify-end m-5 appFooter"><p>Ars Nouveau Wiki</p></footer>
     </svelte:fragment>
-    <div class="m4" style="height: 90vh;">
-        <slot/>
-    </div>
+    <slot/>
 </AppShell>
