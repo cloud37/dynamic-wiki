@@ -8,4 +8,4 @@ so that arbitrary mods and repositories could be displayed
 
 ## Development Information
 
-Currently requires a locally running CORS Anwhere proxy.
+Currently requires a locally running CORS Anywhere proxy.

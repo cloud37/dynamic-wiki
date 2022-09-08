@@ -1,7 +1,9 @@
 <script lang="ts">
-    import '../app.postcss';
-    import Navigation from "$lib/components/navigation/Navigation.svelte";
     import '@brainandbones/skeleton/styles/themes/theme-modern.css';
+    import '@brainandbones/skeleton/styles/tailwind.css';
+    import '@brainandbones/skeleton/styles/core.css';
+    import '@brainandbones/skeleton/styles/typography.css';
+    import '../app.postcss';
     import {AppBar, AppShell} from "@brainandbones/skeleton";
     import {page} from '$app/stores'
     import {afterNavigate} from "$app/navigation";
