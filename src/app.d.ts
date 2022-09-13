@@ -40,6 +40,7 @@ declare namespace App {
 
 	interface PatchouliCategory {
 		name: string;
+		id: string;
 		description: string;
 		icon: string;
 		sortnum: number;

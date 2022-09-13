@@ -5,4 +5,4 @@
     $: recipeData = getRecipe(recipe)
 </script>
 
-<p>{JSON.stringify(recipeData)}</p>
+<p class="whitespace-pre-line">{JSON.stringify(recipeData, null, 2)}</p>

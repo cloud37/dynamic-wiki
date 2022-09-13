@@ -14,7 +14,7 @@ import {
 } from '$lib/setup/loadFiles';
 
 export async function load({ fetch }: LoadEvent) {
-	await fetch(apiBaseURL, fetchParameters)
+	await fetch(apiBaseURL(), fetchParameters)
 		.then(function (response) {
 			if (response.status === 200 || response.status === 0) {
 				return Promise.resolve(response.blob());
@@ -42,13 +42,8 @@ export async function load({ fetch }: LoadEvent) {
 					loadedLanguages,
 					loadedRecipes
 				]) => {
-					const preparedPatchouli = preparePatchouli(
-						loadedPatchouliCategories,
-						loadedPatchouliEntries
-					);
-					console.log(preparedPatchouli);
 					texturesStore.set(loadedTextures);
-					patchouliStore.set(preparedPatchouli);
+					patchouliStore.set(preparePatchouli(loadedPatchouliCategories, loadedPatchouliEntries));
 					languagesStore.set(loadedLanguages);
 					recipesStore.set(loadedRecipes);
 				}

@@ -2,7 +2,10 @@ export const preparePatchouli = (
 	categories: { [x: string]: App.PatchouliCategory },
 	entries: { [x: string]: App.PatchouliEntry }
 ) => {
-	Object.values(categories).forEach((category) => (category.entries = {}));
+	Object.entries(categories).forEach(([key, category]) => {
+		category.entries = {};
+		category.id = key;
+	});
 	Object.entries(entries).forEach(([key, value]) => {
 		const category = value.category.split(':').pop() || '';
 		value.category = category;

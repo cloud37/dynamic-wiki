@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Category from "$lib/components/navigation/Category.svelte";
+    import {getLabel} from "$lib/languages.js";
+    import {storeCurrentUrl} from "$lib/stores/uiState.js";
     import {patchouliStore} from "$lib/stores/fileStore";
     import {storeMobileDrawer} from "$lib/stores/uiState";
-    import {Divider} from "@brainandbones/skeleton";
-    import {onMount} from "svelte";
+    import {Divider, List, ListItem} from "@brainandbones/skeleton";
 
     export let embedded: boolean = false;
 
@@ -13,21 +13,27 @@
         storeMobileDrawer.set(false);
     }
 
-    let navigationDiv;
-
     $: sortedCategories = Object.values($patchouliStore).sort((categoryA, categoryB) => categoryA.sortnum - categoryB.sortnum)
-
-    onMount(() => {
-        if (navigationDiv) {
-            navigationDiv.parentElement.style.height = "93vh"
-        }
-    })
 
 </script>
 
-<div bind:this={navigationDiv} class="mb-8 {$$props.class || ''}">
+<div class="mb-8 {$$props.class || ''}">
     {#each sortedCategories as category, i}
-        <Category category={category}/>
+        <div class="text-primary-500 text-sm font-bold uppercase p-4">
+            <a href={`/category/${category.id}`} style="text-decoration-line: none">
+                {getLabel(category.name)}
+            </a>
+        </div>
+
+        <List label={getLabel(category.name)} selected={storeCurrentUrl} tag="nav">
+            {#each Object.entries(category.entries) as [id, entry]}
+                <ListItem href={`/category/${entry.category}/entry/${id}`}
+                          value={`/category/${entry.category}/entry/${id}`}
+                          on:click={onListItemClick}>
+                    <span>{getLabel(entry.name)}</span>
+                </ListItem>
+            {/each}
+        </List>
         {#if i + 1 < sortedCategories.length}
             <Divider class="my-4 opacity-40"/>
         {/if}

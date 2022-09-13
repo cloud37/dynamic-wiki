@@ -3,6 +3,7 @@
     import '@brainandbones/skeleton/styles/tailwind.css';
     import '@brainandbones/skeleton/styles/core.css';
     import '@brainandbones/skeleton/styles/typography.css';
+    import '../theme.postcss';
     import '../app.postcss';
     import {AppBar, AppShell} from "@brainandbones/skeleton";
     import {page} from '$app/stores'
@@ -43,9 +44,9 @@
         <Navigation class="hidden lg:block w-[300px]"/>
     </svelte:fragment>
     <svelte:fragment slot="pageFooter">
-        <footer class="flex justify-end m-5 appFooter"><p>Ars Nouveau Wiki</p></footer>
+        <footer class="flex justify-end mb-1 mr-1 appFooter"><p>Ars Nouveau Wiki</p></footer>
     </svelte:fragment>
-    <div class="m4" style="min-height: 90vh;">
+    <div class="m4" style="min-height: 91vh;">
         <slot/>
     </div>
 </AppShell>

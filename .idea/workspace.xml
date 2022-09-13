@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e79102a1-04a4-4a4c-a7c7-78f119ba6fdd" name="Changes" comment="" />
+    <list default="true" id="e79102a1-04a4-4a4c-a7c7-78f119ba6fdd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api/cors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/patchouli/EnchantingPage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/patchouli/LinkPage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme.postcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/navigation/Category.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/navigation/Entry.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/navigation/Navigation.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/navigation/Navigation.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/navigation/Navigation2.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/patchouli/ApparatusPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/patchouli/ApparatusPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/patchouli/CraftingPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/patchouli/CraftingPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/patchouli/ImbuementPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/patchouli/ImbuementPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/patchouli/PatchouliPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/patchouli/PatchouliPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/setup/apiConstants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/setup/apiConstants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/setup/preparePatchouli.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/setup/preparePatchouli.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/category/[category]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/category/[category]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/category/[category]/entry/[entry]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/category/[category]/entry/[entry]/+page.svelte" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Dominik/IdeaProjects/OnlineWiki/src/lib/components/navigation",
+    "last_opened_file_path": "C:/Users/Dominik/IdeaProjects/OnlineWiki/src/lib/components/patchouli",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,11 +81,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\patchouli" />
+      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components" />
       <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\navigation" />
       <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\routes\category\[category]\entry\[entry]" />
-      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib\components\patchouli" />
       <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib" />
-      <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\routes\category\[category]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dominik\IdeaProjects\OnlineWiki\src\lib" />
@@ -104,6 +126,7 @@
       <workItem from="1662570166116" duration="4636000" />
       <workItem from="1662577126854" duration="536000" />
       <workItem from="1662613791376" duration="10886000" />
+      <workItem from="1663045389657" duration="7769000" />
     </task>
     <servers />
   </component>
