@@ -32,6 +32,7 @@
     <meta content="Ars Nouveau Wiki | An automatically generated Wiki for Ars Nouveau" property="og:title">
     <meta content={`This is a wiki page generated automatically from the Patchouli Data in the Ars Noveau wiki. Therefore, it's pretty janky`}
           property="og:description">
+    <title>Ars Nouveau Wiki</title>
 </svelte:head>
 
 <NavigationDrawer/>

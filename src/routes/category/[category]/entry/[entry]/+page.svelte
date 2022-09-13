@@ -14,10 +14,14 @@
 
     $: containingCategory = $patchouliStore[data?.category]
     $: displayedEntry = containingCategory.entries[data?.entry]
+    $: entryName = getLabel(displayedEntry.name)
 
 </script>
 
-<h2 class="text-center text-xl">{getLabel(displayedEntry.name)}</h2>
+
+<svelte:head><title>{entryName}</title></svelte:head>
+
+<h2 class="text-center text-xl">{entryName}</h2>
 <div class="flex flex-col justify-start items-center h-full m-4">
     <div class="flex flex-col">
         {#each displayedEntry.pages as page}

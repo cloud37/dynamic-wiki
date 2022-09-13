@@ -11,11 +11,14 @@
     }
 
     $: displayedCategory = $patchouliStore[data?.category]
+    $: categoryName = getLabel(displayedCategory.name)
 
 </script>
 
+<svelte:head><title>{categoryName}</title></svelte:head>
 
-<h2 class="text-center text-xl">{getLabel(displayedCategory.name)}</h2>
+
+<h2 class="text-center text-xl">{categoryName}</h2>
 <div class="flex flex-col justify-start items-center h-full m-4">
     <p>{getLabel(displayedCategory.description)}</p>
 </div>

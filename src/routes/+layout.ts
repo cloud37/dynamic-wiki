@@ -13,7 +13,7 @@ import {
 } from '$lib/setup/loadFiles';
 
 export async function load({ fetch }: LoadEvent) {
-	await fetch('/data/zipball')
+	await fetch('/api/zipball')
 		.then(function (response) {
 			if (response.status === 200 || response.status === 0) {
 				return Promise.resolve(response.blob());
