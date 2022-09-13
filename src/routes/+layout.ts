@@ -1,5 +1,4 @@
 import type { LoadEvent } from '@sveltejs/kit';
-import { apiBaseURL, fetchParameters } from '$lib/setup/apiConstants';
 import JSZip from 'jszip';
 import { preparePatchouli } from '$lib/setup/preparePatchouli';
 import { patchouliStore, recipesStore, texturesStore } from '$lib/stores/fileStore';
@@ -14,7 +13,7 @@ import {
 } from '$lib/setup/loadFiles';
 
 export async function load({ fetch }: LoadEvent) {
-	await fetch(apiBaseURL(), fetchParameters)
+	await fetch('/api/zipball')
 		.then(function (response) {
 			if (response.status === 200 || response.status === 0) {
 				return Promise.resolve(response.blob());

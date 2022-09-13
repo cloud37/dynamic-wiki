@@ -9,6 +9,8 @@ export default async function handler(request, response) {
 
 	const { status, data } = await getRequest(url);
 
+	response.setHeader('Cache-Control', 's-maxage=3600, public, immutable');
+	response.setHeader('access-control-allow-origin', '*');
 	response.status(status).send(data);
 
 	function getRequest(url) {

@@ -1,7 +1,6 @@
 import type JSZip from 'jszip';
 import type { JSZipObject } from 'jszip';
 import { getFileName } from '../utils/fileName';
-import { arrayToDictionary } from '../utils/arrayHelper';
 
 const isTexture = (zipObject: JSZipObject) =>
 	!zipObject.dir && zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/items');
@@ -33,7 +32,9 @@ export const getTextureFiles = (zip: JSZip) => {
 					})
 			)
 	).then((resultingArray) => {
-		return arrayToDictionary(resultingArray);
+		return resultingArray.reduce((previousValue, currentValue) => {
+			return { ...previousValue, ...currentValue };
+		}, {});
 	});
 };
 
@@ -50,6 +51,8 @@ export const getMatchingJSONFiles = (matcher: (value: JSZipObject) => boolean, z
 					})
 			)
 	).then((resultingArray) => {
-		return arrayToDictionary(resultingArray);
+		return resultingArray.reduce((previousValue, currentValue) => {
+			return { ...previousValue, ...currentValue };
+		}, {});
 	});
 };
