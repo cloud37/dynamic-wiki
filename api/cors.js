@@ -1,5 +1,6 @@
+import https from 'https';
+
 export default async function handler(request, response) {
-	const https = require('https');
 	let query = Object.entries(request.query);
 	query.shift();
 	let url = request.query.url;
@@ -15,7 +16,7 @@ export default async function handler(request, response) {
 
 	function getRequest(url) {
 		return new Promise((resolve) => {
-			const req = https.get(url, (resp) => {
+			https.get(url, (resp) => {
 				let data = '';
 				resp.on('data', (chunk) => {
 					data += chunk;
