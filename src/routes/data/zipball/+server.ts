@@ -5,7 +5,7 @@ const apiBaseURL = () => {
 	if (dev) {
 		return 'http://localhost:30080/https://api.github.com/repos/baileyholl/Ars-Nouveau/zipball';
 	} else {
-		return 'https://arsnouveau.wiki/api/cors?url=https://api.github.com/repos/baileyholl/Ars-Nouveau/zipball';
+		return '/api/cors?url=https://api.github.com/repos/baileyholl/Ars-Nouveau/zipball';
 	}
 };
 
