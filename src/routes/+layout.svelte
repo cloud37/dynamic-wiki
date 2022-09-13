@@ -5,12 +5,13 @@
     import '@brainandbones/skeleton/styles/typography.css';
     import '../theme.postcss';
     import '../app.postcss';
-    import {AppBar, AppShell} from "@brainandbones/skeleton";
+    import {AppShell} from "@brainandbones/skeleton";
     import {page} from '$app/stores'
     import {afterNavigate} from "$app/navigation";
     import {storeCurrentUrl} from "$lib/stores/uiState";
     import NavigationDrawer from "$lib/components/navigation/NavigationDrawer.svelte";
     import Navigation from "$lib/components/navigation/Navigation.svelte";
+    import HeaderBar from "$lib/components/HeaderBar.svelte";
 
     // Lifecycle Events
     afterNavigate(() => {
@@ -39,7 +40,7 @@
 
 <AppShell>
     <svelte:fragment slot="header">
-        <AppBar><a href="/"><h1 class="text-center text-2xl">Ars Nouveau Wiki</h1></a></AppBar>
+        <HeaderBar/>
     </svelte:fragment>
     <svelte:fragment slot="sidebarLeft">
         <Navigation class="hidden lg:block w-[300px]"/>
