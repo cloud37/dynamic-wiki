@@ -67,4 +67,8 @@ declare namespace App {
 	export interface TextureDictionary {
 		[x: string]: string;
 	}
+
+	export interface MinecraftLanguageDictionary {
+		[x: string]: string;
+	}
 }

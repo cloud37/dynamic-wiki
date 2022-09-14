@@ -8,5 +8,5 @@ so that arbitrary mods and repositories could be displayed
 
 ## Development Information
 
-Currently requires a locally running CORS Anywhere proxy.   
+Currently requires a locally running CORS Anywhere proxy.  
 [docker-cors-anywhere](https://github.com/yasinuslu/docker-cors-anywhere) is fast and easy to set up
