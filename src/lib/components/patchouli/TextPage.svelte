@@ -1,7 +1,10 @@
 <script lang="ts">
-	import { getLabel } from '$lib/languages.js';
+    import {getLabel} from '$lib/languages.js';
+    import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
 
-	export let text: string;
+    export let text: string;
+
+    $: formattedText = formatPatchouliText(getLabel(text));
 </script>
 
-<p>{getLabel(text)}</p>
+<p>{@html formattedText}</p>

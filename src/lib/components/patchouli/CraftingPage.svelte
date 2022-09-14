@@ -1,8 +1,11 @@
 <script lang="ts">
-	import { getRecipe } from '$lib/recipes';
+    import {getRecipe} from '$lib/recipes';
+    import ShapedRecipe from "$lib/components/patchouli/RecipeDisplay/ShapedRecipe.svelte";
+    import ShapelessRecipe from "$lib/components/patchouli/RecipeDisplay/ShapelessRecipe.svelte";
 
-	export let recipe: string;
-	$: recipeData = getRecipe(recipe);
+    export let recipe: string;
+    $: recipeData = getRecipe(recipe) as App.Recipe;
+    $: displayedComponent = recipeData.type === 'minecraft:crafting_shaped' ? ShapedRecipe : ShapelessRecipe
 </script>
 
-<p class="whitespace-pre-line">{JSON.stringify(recipeData, null, 2)}</p>
+<svelte:component recipeData={recipeData} this={displayedComponent}/>

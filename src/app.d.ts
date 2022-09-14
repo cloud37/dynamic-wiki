@@ -34,6 +34,8 @@ declare namespace App {
 			| string;
 		recipe?: string;
 		text?: string;
+		entries?: Array<string>;
+		title?: string;
 
 		[x: string]: string;
 	}
@@ -54,6 +56,33 @@ declare namespace App {
 		icon: string;
 		name: string;
 		pages: Array<PatchouliPage>;
+	}
+
+	interface Item {
+		item: string;
+	}
+
+	interface Tag {
+		tag: string;
+	}
+
+	interface Recipe {
+		type: 'minecraft:crafting_shaped' | 'minecraft:crafting_shapeless';
+	}
+
+	interface ShapedRecipe extends Recipe {
+		type: 'minecraft:crafting_shaped';
+		key: {
+			[x: string]: Item | Tag;
+		};
+		pattern: Array<string>;
+		result: Item;
+	}
+
+	interface ShapelessRecipe extends Recipe {
+		type: 'minecraft:crafting_shapeless';
+		ingredients: Array<Item | Tag>;
+		result: Item;
 	}
 
 	interface PatchouliStore {

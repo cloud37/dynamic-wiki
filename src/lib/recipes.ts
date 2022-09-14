@@ -1,14 +1,17 @@
-import { recipesStore } from '$lib/stores/fileStore';
-import { getIdFromResourceLocation } from '$lib/utils/idHelper';
+import {recipesStore} from '$lib/stores/fileStore';
+import {getIdFromResourceLocation} from '$lib/utils/idResolver';
 
-let recipes: App.TextureDictionary;
+let recipes: App.TextureDictionary | undefined;
 
 recipesStore.subscribe((value) => (recipes = value));
 
 export const getRecipe = (resourceLocation: string): string => {
-	const recipe = recipes[getIdFromResourceLocation(resourceLocation)] || 'unknown recipe';
-	if (recipe === 'unknown recipe') {
-		console.log(`Unknown Recipe: ${resourceLocation}`);
+	if (recipes) {
+		const recipe = recipes[getIdFromResourceLocation(resourceLocation)] || 'unknown recipe';
+		if (recipe === 'unknown recipe') {
+			console.log(`Unknown Recipe: ${resourceLocation}`);
+		}
+		return recipe;
 	}
-	return recipe;
+	return `Unknown Recipe: ${resourceLocation}`;
 };
