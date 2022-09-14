@@ -6,7 +6,7 @@ let textures: App.TextureDictionary | undefined;
 texturesStore.subscribe((value) => (textures = value));
 
 const mapSpecialTextures = (textureId: string): string => {
-	if (textureId === 'novice_spell_book') {
+	if (['novice_spell_book', 'archmage_spell_book', 'apprentice_spell_book'].includes(textureId)) {
 		return 'spellbook_purple';
 	}
 	return textureId;
