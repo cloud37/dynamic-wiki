@@ -23,7 +23,6 @@
     export let recipe: string;
     $: recipeData = getRecipe(recipe, $recipesStore);
     $: displayedComponent = getRecipeDisplay(recipeData.type)
-    console.log(`recipe: ${recipe} recipedate ${recipeData}`)
 </script>
 
 <svelte:component recipeData={recipeData} this={displayedComponent}/>
