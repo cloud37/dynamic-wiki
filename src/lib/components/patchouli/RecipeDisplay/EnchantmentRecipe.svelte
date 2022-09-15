@@ -7,6 +7,13 @@
 
     export let recipeData: App.EnchantmentRecipe;
 
+    const getEnchantmentLabel = (label: string) => {
+        if (label === 'ars_nouveau:reactive') {
+            return getLabel(`enchantment.ars_nouveau.${getIdFromResourceLocation(label)}`, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)
+        }
+        return getLabel(`enchantment.minecraft.${getIdFromResourceLocation(label)}`, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)
+    }
+
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag)
 </script>
 
@@ -33,7 +40,7 @@
     {/if}
     =>
     <Card>
-        {`The Enchantment ${getLabel(`enchantment.minecraft.${getIdFromResourceLocation(recipeData.enchantment)}`, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)} will be applied to your item`}
+        {`The Enchantment ${getEnchantmentLabel(recipeData.enchantment)} at level ${recipeData.level} will be applied to your item`}
     </Card>
 </div>
 

@@ -17,6 +17,11 @@
                 return EnchantmentRecipe;
             case 'ars_nouveau:glyph':
                 return GlyphRecipe;
+            case 'ars_nouveau:no_output_apparatus_recipe':
+                // TODO!
+                return undefined
+            default:
+                return undefined;
         }
     }
 

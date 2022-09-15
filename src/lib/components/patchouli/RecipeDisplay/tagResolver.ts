@@ -77,8 +77,47 @@ export const resolveTag = (tag: string): string | undefined => {
 				return 'Any button';
 			case 'chests':
 				return 'Any chest';
+			case 'summon_bed':
+				return 'Any Starby bed';
 			case 'seeds':
 				return 'wheat_seeds';
+			case 'dyes':
+				switch (tagParts[1]) {
+					case 'blue':
+						return 'blue_dye';
+					case 'red':
+						return 'red_dye';
+					case 'yellow':
+						return 'yellow_dye';
+					case 'orange':
+						return 'orange_dye';
+					case 'purple':
+						return 'purple_dye';
+					case 'white':
+						return 'white_dye';
+					case 'black':
+						return 'black_dye';
+					case 'light_blue':
+						return 'light_blue_dye';
+					case 'lime':
+						return 'lime_dye';
+					case 'cyan':
+						return 'cyan_dye';
+					case 'gray':
+						return 'gray_dye';
+					case 'light_gray':
+						return 'light_gray_dye';
+					case 'brown':
+						return 'brown_dye';
+					case 'green':
+						return 'green_dye';
+					case 'magenta':
+						return 'magenta_dye';
+					case 'pink':
+						return 'pink_dye';
+					default:
+						return 'unknown color';
+				}
 			case 'ender_pearls':
 				return 'ender_pearl';
 		}

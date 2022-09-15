@@ -10,6 +10,9 @@
     }
 
     const getItemSrc = (item: string, textures: App.TextureDictionary) => {
+        if (item && !item.split) {
+            debugger;
+        }
         let src = getTexture(mapSpecialNames(item), textures)
         const itemId = getIdFromResourceLocation(item);
         if (src === 'Unknown Texture') {
@@ -44,9 +47,9 @@
         }
     }
 
-    $: src = getItemSrc(item, $texturesStore)
-    $: displayText = getDisplayText(item, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)
-    $: showImage = !notDisplayableItems.includes(item)
+    $: src = item ? getItemSrc(item, $texturesStore) : 'missingitem';
+    $: displayText = item ? getDisplayText(item, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore) : 'misingitem';
+    $: showImage = !notDisplayableItems.includes(item);
 </script>
 
 <div class="self-center flex flex-col items-center">

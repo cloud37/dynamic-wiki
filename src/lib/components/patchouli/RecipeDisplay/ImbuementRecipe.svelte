@@ -5,7 +5,8 @@
 
     export let recipeData: App.ImbuementRecipe;
 
-
+    $: console.log(recipeData)
+    $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
 </script>
 
 <h4>Enchanting Apparatus Recipe</h4>
@@ -13,7 +14,7 @@
     <Card class="flex flex-col items-center">
         Pedestal Items (Will not be consumed):
         <div class="grid grid-rows-3 grid-cols-3 gap-2">
-            {#each recipeData.pedestalItems as ingredient}
+            {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
@@ -21,7 +22,7 @@
     +
     <Card class="flex flex-col items-center">
         Reagent:
-        <Ingredient ingredient={recipeData.input.item}/>
+        <Ingredient ingredient={recipeData.input}/>
     </Card>
     +
     <Card>
@@ -30,7 +31,7 @@
 
     =>
     <Card>
-        <Item item={recipeData.output.item}/>
+        <Item item={recipeData.output}/>
     </Card>
 </div>
 <p class="text-center">*Source slowly accumulates on it's own in the Imbuement Chamber. Provide a full Source Jar for
