@@ -1,7 +1,4 @@
 <script lang="ts">
-
-    import RecipeWarning from "$lib/components/patchouli/RecipeDisplay/RecipeWarning.svelte";
-
     export let recipeData: App.ShapedRecipe;
 </script>
 
@@ -11,4 +8,3 @@
     =>
     <div></div>
 </div>
-<RecipeWarning/>
