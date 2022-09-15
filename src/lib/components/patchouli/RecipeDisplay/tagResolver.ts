@@ -21,10 +21,16 @@ export const resolveTag = (tag: string): string | undefined => {
 						return 'source_gem';
 					case 'diamond':
 						return 'diamond';
+					case 'quartz':
+						return 'quartz';
+					case 'lapis':
+						return 'lapis_lazuli';
+					case 'emerald':
+						return 'emerald';
 					default:
 						return undefined;
 				}
-			case 'storage_block':
+			case 'storage_blocks':
 				switch (tagParts[1]) {
 					case 'source':
 						return 'block.ars_nouveau.source_gem_block';
@@ -40,6 +46,8 @@ export const resolveTag = (tag: string): string | undefined => {
 						return 'block.minecraft.netherite_block';
 					case 'lapis':
 						return 'block.minecraft.lapis_block';
+					case 'emerald':
+						return 'block.minecraft.emerald_block';
 					default:
 						return undefined;
 				}
@@ -63,8 +71,16 @@ export const resolveTag = (tag: string): string | undefined => {
 				return 'Any fish';
 			case 'stone':
 				return 'Any smooth stone';
+			case 'glass':
+				return 'Any glass';
+			case 'buttons':
+				return 'Any button';
+			case 'chests':
+				return 'Any chest';
 			case 'seeds':
 				return 'wheat_seeds';
+			case 'ender_pearls':
+				return 'ender_pearl';
 		}
 	}
 	return undefined;

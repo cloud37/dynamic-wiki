@@ -51,5 +51,5 @@
 
 <div class="self-center flex flex-col items-center">
     {#if showImage}<img alt={`picture of the ingredient ${item}`} height="75px" {src} width="75px"/>{/if}
-    <span>{displayText}</span>
+    <span class="text-center">{displayText}</span>
 </div>
