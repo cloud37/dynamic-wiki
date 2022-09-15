@@ -66,6 +66,8 @@ declare namespace App {
 		tag: string;
 	}
 
+	type Ingredient = Tag & Item & {}
+
 	interface Recipe {
 		type:
 			| 'minecraft:crafting_shaped'
@@ -80,7 +82,7 @@ declare namespace App {
 	interface ShapedRecipe extends Recipe {
 		type: 'minecraft:crafting_shaped';
 		key: {
-			[x: string]: Item | Tag;
+			[x: string]: Ingredient;
 		};
 		pattern: Array<string>;
 		result: Item;
@@ -88,16 +90,16 @@ declare namespace App {
 
 	interface ShapelessRecipe extends Recipe {
 		type: 'minecraft:crafting_shapeless' | 'ars_nouveau:book_upgrade';
-		ingredients: Array<Item | Tag>;
+		ingredients: Array<Ingredient>;
 		result: Item;
 	}
 
 	interface EnchantingApparatusRecipe extends Recipe {
 		type: 'ars_nouveau:enchanting_apparatus';
 		keepNbtOfReagent: boolean;
-		reagent: Item;
+		reagent: Array<Ingredient>;
 		output: Item;
-		pedestalItems: Array<Item | Tag>;
+		pedestalItems: Array<Ingredient>;
 		sourceCost: number;
 	}
 
@@ -105,7 +107,7 @@ declare namespace App {
 		type: 'ars_nouveau:enchantment';
 		enchantment: string;
 		level: number;
-		pedestalItems: Array<Item | Tag>;
+		pedestalItems: Array<Ingredient>;
 		sourceCost: number;
 	}
 
@@ -113,16 +115,18 @@ declare namespace App {
 		type: 'ars_nouveau:glyph';
 		count: number;
 		exp: number;
-		inputItems: Array<Item | Tag>;
+		inputItems: Array<Ingredient>;
 		output: Item;
 	}
 
 	interface ImbuementRecipe extends Recipe {
 		type: 'ars_nouveau:imbuement';
 		count: number;
-		input: Item | Tag;
+		input: {
+			item: Ingredient;
+		}
 		output: Item;
-		pedestalItems: Array<Item | Tag>;
+		pedestalItems: Array<Ingredient>;
 		source: number;
 	}
 

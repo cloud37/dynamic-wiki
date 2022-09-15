@@ -4,11 +4,12 @@
     import {getTexture} from "$lib/textures";
     import {texturesStore} from "$lib/stores/fileStore";
     import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
+    import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
 
     export let tag: string
 
     $: resolvedTag = resolveTag(tag);
-    $: displayAsText = resolvedTag?.includes("block") || resolvedTag === 'Fish';
+    $: displayAsText = resolvedTag?.includes("block") || resolvedTag?.includes("Any");
     $: resolvedTexture = getTexture(resolvedTag, $texturesStore)
     $: src = !displayAsText && resolvedTexture !== 'Unknown Texture' ? resolvedTexture : `/minecraft/textures/item/${resolvedTag}.png`
 </script>
@@ -17,6 +18,6 @@
     {#if displayAsText}
         <span class="self-center">{getLabel(resolvedTag, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}</span>
     {:else }
-        <img {src} alt={`picture of the ingredient ${resolvedTag}`} height="75px" width="75px"/>
+        <Item item={resolvedTag}/>
     {/if}
 {/if}

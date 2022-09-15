@@ -4,22 +4,23 @@
     import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.EnchantingApparatusRecipe;
+    $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
 </script>
 
 <h4>Enchanting Apparatus Recipe</h4>
 <div class="flex items-center justify-around">
     <Card class="flex flex-col items-center">
-        Pedestal Items
+        Pedestal Items:
         <div class="grid grid-rows-3 grid-cols-3 gap-2">
-            {#each recipeData.pedestalItems as ingredient}
+            {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
     </Card>
     +
     <Card class="flex flex-col items-center">
-        Reagent
-        <Item item={recipeData.reagent.item}/>
+        Reagent:
+        <Ingredient ingredient={recipeData.reagent[0]}/>
     </Card>
     {#if recipeData.sourceCost}
         +

@@ -8,8 +8,11 @@ export const notDisplayableItems = [
 	'ars_nouveau:arcane_pedestal',
 	'ars_nouveau:enchanting_apparatus',
 	'ars_nouveau:imbuement_chamber',
+	'ars_nouveau:volcanic_sourcelink',
+	'ars_nouveau:sconce',
 	'minecraft:obsidian',
 	'minecraft:quartz_block',
 	'minecraft:lily_pad',
-	'minecraft:powered_rail'
+	'minecraft:powered_rail',
+	'minecraft:sculk_catalyst'
 ];

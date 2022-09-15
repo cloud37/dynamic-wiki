@@ -1,6 +1,6 @@
 export const resolveTag = (tag: string): string | undefined => {
 	const tagParts = tag.split(':').pop()?.split('/');
-	if (tagParts && tagParts.length === 2) {
+	if (tagParts && tagParts.length > 0) {
 		switch (tagParts[0]) {
 			case 'ingots':
 				switch (tagParts[1]) {
@@ -60,7 +60,11 @@ export const resolveTag = (tag: string): string | undefined => {
 						return undefined;
 				}
 			case 'fishes':
-				return 'Fish';
+				return 'Any fish';
+			case 'stone':
+				return 'Any smooth stone';
+			case 'seeds':
+				return 'wheat_seeds';
 		}
 	}
 	return undefined;

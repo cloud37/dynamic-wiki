@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    const isItem = (ingredient: App.Item | App.Tag): ingredient is App.Item => {
+    const isItem = (ingredient: App.Ingredient): ingredient is App.Item => {
         return (<App.Item>ingredient).item !== undefined;
     }
 </script>
@@ -8,7 +8,7 @@
     import Tag from "$lib/components/patchouli/RecipeDisplay/Tag.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
 
-    export let ingredient: App.Item | App.Tag;
+    export let ingredient: App.Ingredient;
 
     $: displayAsItem = isItem(ingredient)
 </script>
