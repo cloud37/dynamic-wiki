@@ -8,7 +8,7 @@
 </script>
 
 <h4>Shapeless Recipe</h4>
-<div class="flex items-center">
+<div class="flex items-center justify-around">
     <div class="grid grid-rows-3 grid-cols-3 gap-2">
         {#each recipeData.ingredients as ingredient}
             <Ingredient {ingredient}/>
