@@ -21,6 +21,7 @@
             case 'ars_nouveau:imbuement_recipe':
             case 'ars_nouveau:enchanting_recipe':
             case "ars_nouveau:glyph_recipe":
+            case "ars_nouveau:no_output_apparatus_recipe":
                 return ArsPage;
             default:
                 return undefined;

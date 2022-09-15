@@ -20,9 +20,11 @@
         </div>
     </Card>
     +
-    <Card class="flex flex-col items-center">
-        Reagent:
-        <Ingredient ingredient={recipeData.input}/>
+    <Card>
+        <div class="flex flex-col items-center">
+            Reagent:
+            <Ingredient ingredient={recipeData.input}/>
+        </div>
     </Card>
     +
     <Card>

@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
-    import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
-    import {Card} from "@brainandbones/skeleton";
 
-    export let recipeData: App.EnchantingApparatusRecipe;
+    import {Card} from "@brainandbones/skeleton";
+    import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
+
+    export let recipeData: App.ArmorUpgradeRecipe;
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
 </script>
 
@@ -21,9 +21,8 @@
     <Card>
         <div class="flex flex-col items-center">
             Reagent:
-            <Ingredient ingredient={recipeData.reagent[0]}/>
+            <span>The Armor Piece you want to upgrade</span>
         </div>
-
     </Card>
     {#if recipeData.sourceCost}
         +
@@ -31,6 +30,6 @@
     {/if}
     =>
     <Card>
-        <Item item={recipeData.output.item}/>
+        {`The Tier of your Armor Piece will have increased to ${recipeData.tier + 1}`}
     </Card>
 </div>

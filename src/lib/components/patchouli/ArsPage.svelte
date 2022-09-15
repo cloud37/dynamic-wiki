@@ -5,6 +5,7 @@
     import ImbuementRecipe from "$lib/components/patchouli/RecipeDisplay/ImbuementRecipe.svelte";
     import EnchantmentRecipe from "$lib/components/patchouli/RecipeDisplay/EnchantmentRecipe.svelte";
     import GlyphRecipe from "$lib/components/patchouli/RecipeDisplay/GlyphRecipe.svelte";
+    import ArmorUpgradeRecipe from "$lib/components/patchouli/RecipeDisplay/ArmorUpgradeRecipe.svelte";
 
 
     const getRecipeDisplay = (type: string) => {
@@ -17,9 +18,8 @@
                 return EnchantmentRecipe;
             case 'ars_nouveau:glyph':
                 return GlyphRecipe;
-            case 'ars_nouveau:no_output_apparatus_recipe':
-                // TODO!
-                return undefined
+            case 'ars_nouveau:armor_upgrade':
+                return ArmorUpgradeRecipe;
             default:
                 return undefined;
         }

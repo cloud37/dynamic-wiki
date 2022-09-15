@@ -66,7 +66,7 @@ declare namespace App {
 		tag: string;
 	}
 
-	type Ingredient = Tag & Item & {}
+	type Ingredient = Tag & Item & {};
 
 	interface Recipe {
 		type:
@@ -76,6 +76,7 @@ declare namespace App {
 			| 'ars_nouveau:imbuement'
 			| 'ars_nouveau:enchantment'
 			| 'ars_nouveau:glyph'
+			| 'ars_nouveau:armor_upgrade'
 			| 'Unknown Recipe';
 	}
 
@@ -124,10 +125,17 @@ declare namespace App {
 		count: number;
 		input: {
 			item: Ingredient;
-		}
+		};
 		output: Item;
 		pedestalItems: Array<Ingredient>;
 		source: number;
+	}
+
+	interface ArmorUpgradeRecipe extends Recipe {
+		type: 'ars_nouveau:armor_upgrade';
+		tier: number;
+		pedestalItems: Array<Ingredient>;
+		sourceCost: number;
 	}
 
 	interface PatchouliStore {
