@@ -30,6 +30,6 @@
     $: displayedComponent = getDisplayedComponent(patchouliPage?.type);
 </script>
 
-<div class="mb-2">
+<div class="mb-2" style="min-width: 60vw">
     <svelte:component {...patchouliPage} this={displayedComponent}/>
 </div>

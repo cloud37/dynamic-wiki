@@ -8,4 +8,4 @@
     $: formattedText = formatPatchouliText(getLabel(text, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore));
 </script>
 
-<p>{@html formattedText}</p>
+<p class="text-center">{@html formattedText}</p>

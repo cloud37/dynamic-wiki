@@ -49,5 +49,6 @@ export const notDisplayableItems = [
 	'minecraft:wither_rose',
 	'minecraft:lightning_rod',
 	'minecraft:stonecutter',
-	'minecraft:wither_skeleton_skull'
+	'minecraft:wither_skeleton_skull',
+	'minecraft:crafting_table'
 ];
