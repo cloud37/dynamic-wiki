@@ -1,20 +1,19 @@
 <script context="module" lang="ts">
     const prepareRecipe = (recipeData: App.ShapedRecipe) => {
-        const preparedRecipe = [...recipeData.pattern.join("")].map(character => {
+        return [...recipeData.pattern.join("")].map(character => {
             if (character !== ' ') {
                 return recipeData.key[character];
             } else {
                 return null;
             }
         });
-        debugger
-        return preparedRecipe
     }
 </script>
 
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.ShapedRecipe;
 
@@ -23,17 +22,19 @@
 
 <h4>Shaped Recipe:</h4>
 <div class="flex items-center justify-around">
-    <div class="grid grid-rows-3 grid-cols-3 gap-2">
-        {#each craftingGrid as craftingGridSlot}
-            {#if craftingGridSlot}
-                <Ingredient ingredient={craftingGridSlot}/>
-            {:else }
-                <div/>
-            {/if}
-        {/each}
-    </div>
+    <Card>
+        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+            {#each craftingGrid as craftingGridSlot}
+                {#if craftingGridSlot}
+                    <Ingredient ingredient={craftingGridSlot}/>
+                {:else }
+                    <div/>
+                {/if}
+            {/each}
+        </div>
+    </Card>
     =>
-    <div>
+    <Card>
         <Item item={recipeData.result.item}/>
-    </div>
+    </Card>
 </div>

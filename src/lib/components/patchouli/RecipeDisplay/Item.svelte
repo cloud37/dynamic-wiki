@@ -2,11 +2,20 @@
     import {getTexture} from "$lib/textures";
     import {getBlockOrItemLabel, getLabel} from "$lib/languages";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
+    import {getIdFromResourceLocation} from "$lib/utils/idResolver";
 
     const getItemSrc = (item: string, textures: App.TextureDictionary) => {
+        if (!item) {
+            debugger;
+        }
         let src = getTexture(item, textures)
+        const itemId = getIdFromResourceLocation(item);
         if (src === 'Unknown Texture') {
-            src = `/minecraft/textures/item/${item.split(":").pop()}.png`
+            if (['clock', 'compass'].includes(itemId)) {
+                src = `/minecraft/textures/item/${itemId}_12.png`
+            } else {
+                src = `/minecraft/textures/item/${itemId}.png`
+            }
         }
         return src;
     }

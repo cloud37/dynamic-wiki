@@ -8,7 +8,7 @@
     export let tag: string
 
     $: resolvedTag = resolveTag(tag);
-    $: displayAsText = resolvedTag?.includes("block");
+    $: displayAsText = resolvedTag?.includes("block") || resolvedTag === 'Fish';
     $: resolvedTexture = getTexture(resolvedTag, $texturesStore)
     $: src = !displayAsText && resolvedTexture !== 'Unknown Texture' ? resolvedTexture : `/minecraft/textures/item/${resolvedTag}.png`
 </script>

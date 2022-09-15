@@ -1,11 +1,9 @@
 <script lang="ts">
     import TextPage from '$lib/components/patchouli/TextPage.svelte';
     import CraftingPage from '$lib/components/patchouli/CraftingPage.svelte';
-    import ApparatusPage from '$lib/components/patchouli/ApparatusPage.svelte';
-    import ImbuementPage from '$lib/components/patchouli/ImbuementPage.svelte';
     import LinkPage from '$lib/components/patchouli/LinkPage.svelte';
-    import EnchantingPage from '$lib/components/patchouli/EnchantingPage.svelte';
     import RelationsPage from "$lib/components/patchouli/RelationsPage.svelte";
+    import ArsPage from "$lib/components/patchouli/ArsPage.svelte";
 
     export let patchouliPage: App.PatchouliPage;
 
@@ -20,11 +18,10 @@
             case 'patchouli:relations':
                 return RelationsPage;
             case 'ars_nouveau:apparatus_recipe':
-                return ApparatusPage;
             case 'ars_nouveau:imbuement_recipe':
-                return ImbuementPage;
             case 'ars_nouveau:enchanting_recipe':
-                return EnchantingPage;
+            case "ars_nouveau:glyph_recipe":
+                return ArsPage;
             default:
                 return undefined;
         }

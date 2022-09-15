@@ -1,8 +1,8 @@
 import { getIdFromResourceLocation } from '$lib/utils/idResolver';
 
-export const getRecipe = (resourceLocation: string, recipes: App.TextureDictionary): string => {
+export const getRecipe = (resourceLocation: string, recipes: App.RecipeDictionary): App.Recipe => {
 	if (recipes) {
-		return recipes[getIdFromResourceLocation(resourceLocation)] || 'unknown recipe';
+		return recipes[getIdFromResourceLocation(resourceLocation)] || {};
 	}
-	return `Unknown Recipe: ${resourceLocation}`;
+	return { type: 'Unknown Recipe' };
 };

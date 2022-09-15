@@ -67,7 +67,14 @@ declare namespace App {
 	}
 
 	interface Recipe {
-		type: 'minecraft:crafting_shaped' | 'minecraft:crafting_shapeless';
+		type:
+			| 'minecraft:crafting_shaped'
+			| 'minecraft:crafting_shapeless'
+			| 'ars_nouveau:enchanting_apparatus'
+			| 'ars_nouveau:imbuement'
+			| 'ars_nouveau:enchantment'
+			| 'ars_nouveau:glyph'
+			| 'Unknown Recipe';
 	}
 
 	interface ShapedRecipe extends Recipe {
@@ -80,9 +87,43 @@ declare namespace App {
 	}
 
 	interface ShapelessRecipe extends Recipe {
-		type: 'minecraft:crafting_shapeless';
+		type: 'minecraft:crafting_shapeless' | 'ars_nouveau:book_upgrade';
 		ingredients: Array<Item | Tag>;
 		result: Item;
+	}
+
+	interface EnchantingApparatusRecipe extends Recipe {
+		type: 'ars_nouveau:enchanting_apparatus';
+		keepNbtOfReagent: boolean;
+		reagent: Item;
+		output: Item;
+		pedestalItems: Array<Item | Tag>;
+		sourceCost: number;
+	}
+
+	interface EnchantmentRecipe extends Recipe {
+		type: 'ars_nouveau:enchantment';
+		enchantment: string;
+		level: number;
+		pedestalItems: Array<Item | Tag>;
+		sourceCost: number;
+	}
+
+	interface GlyphRecipe extends Recipe {
+		type: 'ars_nouveau:glyph';
+		count: number;
+		exp: number;
+		inputItems: Array<Item | Tag>;
+		output: Item;
+	}
+
+	interface ImbuementRecipe extends Recipe {
+		type: 'ars_nouveau:imbuement';
+		count: number;
+		input: Item | Tag;
+		output: Item;
+		pedestalItems: Array<Item | Tag>;
+		source: number;
 	}
 
 	interface PatchouliStore {
@@ -90,7 +131,7 @@ declare namespace App {
 	}
 
 	interface RecipeDictionary {
-		[x: string]: string;
+		[x: string]: Recipe;
 	}
 
 	export interface TextureDictionary {

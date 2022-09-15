@@ -38,6 +38,8 @@ export const resolveTag = (tag: string): string | undefined => {
 						return 'block.minecraft.copper_block';
 					case 'netherite':
 						return 'block.minecraft.netherite_block';
+					case 'lapis':
+						return 'block.minecraft.lapis_block';
 					default:
 						return undefined;
 				}
@@ -57,6 +59,8 @@ export const resolveTag = (tag: string): string | undefined => {
 					default:
 						return undefined;
 				}
+			case 'fishes':
+				return 'Fish';
 		}
 	}
 	return undefined;
