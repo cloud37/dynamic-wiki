@@ -3,21 +3,21 @@
     import {getBlockOrItemLabel, getLabel} from "$lib/languages";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
 
-    const getItemSrc = (item: string) => {
-        let src = getTexture(item)
+    const getItemSrc = (item: string, textures: App.TextureDictionary) => {
+        let src = getTexture(item, textures)
         if (src === 'Unknown Texture') {
             src = `/minecraft/textures/item/${item.split(":").pop()}.png`
         }
         return src;
     }
 
-    const getDisplayText = (item: string) => {
+    const getDisplayText = (item: string, languages: App.LanguageDictionary, chosenLanguage: string, minecraftLanguage: App.MinecraftLanguageDictionary) => {
         if (notDisplayableItems.includes(item)) {
             const splitItem = item.split(":");
             if (splitItem[0] === 'ars_nouveau') {
-                return getBlockOrItemLabel(splitItem[1]);
+                return getBlockOrItemLabel(splitItem[1], languages, chosenLanguage, minecraftLanguage);
             } else {
-                return getLabel(`block.minecraft.${splitItem[1]}`);
+                return getLabel(`block.minecraft.${splitItem[1]}`, languages, chosenLanguage, minecraftLanguage);
             }
         } else {
             return undefined;
@@ -26,10 +26,13 @@
 </script>
 
 <script lang="ts">
+    import {texturesStore} from "$lib/stores/fileStore";
+    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore";
+
     export let item: string;
 
-    $: src = getItemSrc(item)
-    $: displayText = getDisplayText(item)
+    $: src = getItemSrc(item, $texturesStore)
+    $: displayText = getDisplayText(item, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)
 </script>
 
 {#if displayText}

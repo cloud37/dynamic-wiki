@@ -1,25 +1,35 @@
-import { chosenLanguage, languagesStore, minecraftLanguageStore } from '$lib/stores/languageStore';
-
-let currentLanguage: string;
-let languages: App.LanguageDictionary | undefined;
-let minecraftLanguages: App.MinecraftLanguageDictionary | undefined;
-
-chosenLanguage.subscribe((chosenLanguage) => (currentLanguage = chosenLanguage));
-languagesStore.subscribe((value) => (languages = value));
-minecraftLanguageStore.subscribe((value) => (minecraftLanguages = value));
-
-export const getBlockOrItemLabel = (label: string): string => {
-	let foundLabel = getLabel(`item.ars_nouveau.${label}`);
+export const getBlockOrItemLabel = (
+	label: string,
+	languages: App.LanguageDictionary,
+	chosenLanguage: string,
+	minecraftLanguage: App.MinecraftLanguageDictionary
+): string => {
+	let foundLabel = getLabel(
+		`item.ars_nouveau.${label}`,
+		languages,
+		chosenLanguage,
+		minecraftLanguage
+	);
 	if (foundLabel.startsWith('item.ars_nouveau')) {
-		foundLabel = getLabel(`block.ars_nouveau.${label}`);
+		foundLabel = getLabel(
+			`block.ars_nouveau.${label}`,
+			languages,
+			chosenLanguage,
+			minecraftLanguage
+		);
 	}
 	return foundLabel;
 };
 
-export const getLabel = (label: string): string => {
-	if (languages && minecraftLanguages) {
+export const getLabel = (
+	label: string,
+	languages: App.LanguageDictionary,
+	chosenLanguage: string,
+	minecraftLanguage: App.MinecraftLanguageDictionary
+): string => {
+	if (languages && minecraftLanguage) {
 		const foundLabel =
-			languages[currentLanguage][label] || minecraftLanguages[label] || 'unknown label';
+			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';
 		if (foundLabel === 'unknown label') {
 			return label;
 		}

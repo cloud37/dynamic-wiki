@@ -48,6 +48,15 @@ export const resolveTag = (tag: string): string | undefined => {
 					default:
 						return undefined;
 				}
+			case 'nuggets':
+				switch (tagParts[1]) {
+					case 'gold':
+						return 'gold_nugget';
+					case 'iron':
+						return 'iron_nugget';
+					default:
+						return undefined;
+				}
 		}
 	}
 	return undefined;
