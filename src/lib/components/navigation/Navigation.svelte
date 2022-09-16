@@ -28,7 +28,8 @@
         </div>
 
         <List label={getLabel(category.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
-              selected={storeCurrentUrl} tag="nav">
+              selected={storeCurrentUrl} tag="nav"
+              highlight="!bg-primary-500 !text-white">
             {#each Object.entries(category.entries) as [id, entry]}
                 <ListItem
                         href={`/category/${entry.category}/entry/${id}`}
