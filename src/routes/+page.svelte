@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="flex flex-col justify-center items-start h-full">
+<div class="flex flex-col justify-center items-start h-full m-2">
     <p>Welcome to the automatically generated Wiki of Ars Nouveau!</p>
     <br/>
     <p>This Wiki is automatically generated from the Patchouli Files in the Ars Nouveau Repository.
