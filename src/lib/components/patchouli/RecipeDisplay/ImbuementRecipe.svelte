@@ -11,13 +11,18 @@
 
 <h4>Enchanting Apparatus Recipe</h4>
 <div class="flex items-center justify-around">
-    <Card class="flex flex-col items-center">
+    <Card body="flex flex-col items-center">
         Pedestal Items (Will not be consumed):
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
-            {#each mappedInputItems as ingredient}
-                <Ingredient {ingredient}/>
-            {/each}
-        </div>
+        {#if !mappedInputItems || mappedInputItems.length === 0}
+            No Pedestal Items are necessary
+        {:else }
+            <div class="grid grid-rows-3 grid-cols-3 gap-2">
+                {#each mappedInputItems as ingredient}
+                    <Ingredient {ingredient}/>
+                {/each}
+            </div>
+        {/if}
+
     </Card>
     +
     <Card>

@@ -18,7 +18,7 @@
         </div>
     </Card>
     +
-    <Card class="flex flex-col items-center">
+    <Card body="flex flex-col items-center">
         EXP-Cost: {recipeData.exp}
     </Card>
 

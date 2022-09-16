@@ -18,7 +18,7 @@ export const notDisplayableItems = [
 	'ars_nouveau:relay',
 	'ars_nouveau:relay_collector',
 	'ars_nouveau:relay_deposit',
-	'ars_nouveau:relay_warper',
+	'ars_nouveau:relay_warp',
 	'ars_nouveau:archwood_slab',
 	'ars_nouveau:archwood_planks',
 	'ars_nouveau:source_gem_block',
