@@ -6,7 +6,7 @@
     import {Divider, List, ListItem} from '@brainandbones/skeleton';
     import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
     import {afterNavigate} from '$app/navigation';
-    import {browser} from '$app/environment';
+    import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
 
 
     export let embedded: boolean = false;
@@ -21,14 +21,7 @@
         (categoryA, categoryB) => categoryA.sortnum - categoryB.sortnum
     );
     afterNavigate(() => {
-        if (browser) {
-            setTimeout(() => {
-                const elements = document.getElementsByClassName("!bg-primary-500");
-                if (elements && elements.length > 0) {
-                    elements[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
-                }
-            }, 1)
-        }
+        scrollSelectionIntoView();
     })
 </script>
 

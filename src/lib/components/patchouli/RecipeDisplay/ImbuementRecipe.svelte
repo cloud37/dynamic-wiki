@@ -10,7 +10,7 @@
 </script>
 
 <h4>Enchanting Apparatus Recipe</h4>
-<div class="flex items-center justify-around">
+<div class="flex items-center justify-around mt-3">
     <Card body="flex flex-col items-center">
         Pedestal Items (Will not be consumed):
         {#if !mappedInputItems || mappedInputItems.length === 0}

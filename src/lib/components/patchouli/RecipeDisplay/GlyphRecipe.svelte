@@ -9,7 +9,7 @@
 </script>
 
 <h4>Glyph Recipe</h4>
-<div class="flex items-center justify-around">
+<div class="flex items-center justify-around mt-3">
     <Card>
         <div class="grid grid-rows-3 grid-cols-3 gap-2">
             {#each mappedInputItems as ingredient}
