@@ -5,7 +5,7 @@ export const scrollSelectionIntoView = () => {
 		setTimeout(() => {
 			const elements = document.getElementsByClassName('!bg-primary-500');
 			if (elements && elements.length > 0) {
-				elements[0].scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+				elements[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
 			}
 		}, 1);
 	}
