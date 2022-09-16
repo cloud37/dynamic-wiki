@@ -68,6 +68,12 @@ const formatString = (
 			newIndex: index + 2
 		};
 	}
+	if (stringParts[index].startsWith('#')) {
+		return {
+			formatted: `<span style="color: ${stringParts[index]}">${stringParts[index + 1]}</span>`,
+			newIndex: index + 2
+		};
+	}
 	return { formatted: stringParts[index], newIndex: index + 1 };
 };
 

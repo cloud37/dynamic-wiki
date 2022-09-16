@@ -1,6 +1,6 @@
 import JSZip from 'jszip';
 import { preparePatchouli } from '$lib/setup/preparePatchouli';
-import { patchouliStore, recipesStore, texturesStore } from '$lib/stores/fileStore';
+import { patchouliStore, recipesStore, storesLoaded, texturesStore } from '$lib/stores/fileStore';
 import { languagesStore, minecraftLanguageStore } from '$lib/stores/languageStore';
 import {
 	getMatchingJSONFiles,
@@ -57,6 +57,10 @@ const initalizeDynamicallyLoadedStores = (
 					patchouliStore.set(preparePatchouli(loadedPatchouliCategories, loadedPatchouliEntries));
 					languagesStore.set(loadedLanguages);
 					recipesStore.set(loadedRecipes);
+					storesLoaded.set(true);
+					setTimeout(() => {
+						storesLoaded.set(false);
+					}, 86400000 /* stores should be refreshed after 1 day if the server is on for so long */);
 				}
 			);
 		});
