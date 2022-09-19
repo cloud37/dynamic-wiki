@@ -1,15 +1,29 @@
 import { Searcher } from 'fast-fuzzy';
-import { getLabel } from '$lib/languages';
+import { getLabelWithCurrentValues } from '$lib/languages';
 import { searchStore } from '$lib/stores/searchStore';
+import { patchouliStore } from '$lib/stores/fileStore';
+import { get } from 'svelte/store';
 
 const getEntryText = (entry: App.PatchouliEntry) => {
 	let text = '';
 	entry.pages.forEach((page: App.PatchouliPage) => {
 		if (page.type === 'patchouli:text' && page.text) {
-			text += getLabel(page.text);
+			text += getLabelWithCurrentValues(page.text);
 		}
 	});
 	return text;
+};
+
+export const updateSearch = () => {
+	const patchouli = get(patchouliStore);
+	if (patchouli) {
+		const entries = Object.values(patchouli)
+			.map((category) => category.entries)
+			.reduce((previousValue, currentValue) => {
+				return { ...previousValue, ...currentValue };
+			}, {});
+		initializeSearch(patchouli, entries);
+	}
 };
 
 export const initializeSearch = (
@@ -20,8 +34,8 @@ export const initializeSearch = (
 	if (categories) {
 		Object.values(categories).forEach((category) => {
 			searchCandidates.push({
-				title: getLabel(category.name) || '',
-				text: getLabel(category.description) || '',
+				title: getLabelWithCurrentValues(category.name) || '',
+				text: getLabelWithCurrentValues(category.description) || '',
 				href: `/category/${category.id}`
 			});
 		});
@@ -29,7 +43,7 @@ export const initializeSearch = (
 	if (entries) {
 		Object.values(entries).forEach((entry) => {
 			searchCandidates.push({
-				title: getLabel(entry.name) || '',
+				title: getLabelWithCurrentValues(entry.name) || '',
 				text: getEntryText(entry) || '',
 				href: `/category/${entry.category}/entry/${entry.name}`
 			});

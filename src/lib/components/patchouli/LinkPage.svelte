@@ -1,11 +1,11 @@
 <script lang="ts">
-    import {getLabel} from '$lib/languages.js';
+    import Label from "$lib/components/Label.svelte";
 
     export let text: string;
     export let link_text: string;
     export let url: string;
 </script>
 
-<p>{getLabel(text)}</p>
+<p><Label label={text}/></p>
 <a href={url} rel="noopener noreferrer"
-   target="_blank">{getLabel(link_text)}</a>
+   target="_blank"><Label label={link_text}/></a>

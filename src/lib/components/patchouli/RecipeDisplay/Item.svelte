@@ -29,7 +29,7 @@
 <script lang="ts">
     import {texturesStore} from "$lib/stores/fileStore";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
-    import {getBlockOrItemLabel, getLabel} from "$lib/languages";
+    import {getBlockOrItemLabel, getLabelWithCurrentValues} from "$lib/languages";
 
     export let item: string;
 
@@ -39,7 +39,7 @@
             if (splitItem[0] === 'ars_nouveau') {
                 return getBlockOrItemLabel(splitItem[1]);
             } else {
-                return getLabel(`block.minecraft.${splitItem[1]}`);
+                return getLabelWithCurrentValues(`block.minecraft.${splitItem[1]}`);
             }
         } else {
             return getBlockOrItemLabel(item);
@@ -47,7 +47,7 @@
     }
 
     $: src = item ? getItemSrc(item, $texturesStore) : 'missingitem';
-    $: displayText = item ? getDisplayText(item) : 'misingitem';
+    $: displayText = item ? getDisplayText(item) : 'missingitem';
     $: showImage = !notDisplayableItems.includes(item);
 </script>
 

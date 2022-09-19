@@ -1,8 +1,9 @@
 <script lang="ts">
-    import {getLabel} from '$lib/languages.js';
+    import {getLabelWithCurrentValues} from '$lib/languages.js';
     import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
     import {patchouliStore} from "$lib/stores/fileStore";
     import {List, ListItem} from "@brainandbones/skeleton";
+    import Label from "$lib/components/Label.svelte";
 
     export let title: string;
     export let entries: Array<string>;
@@ -15,20 +16,30 @@
     }
     const getName = (entry: string) => {
         const pathParts = entry.split(":").pop().split("/")
-        return getLabel($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name)
+        if (getLabelWithCurrentValues($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name)) {
+            return $patchouliStore[pathParts[0]].entries[pathParts[1]]?.name;
+        } else {
+            return undefined;
+        }
     }
 
 </script>
 
-<h3>{title ? getLabel(title) || 'Related Pages:' : 'Related Pages:'}</h3>
+<h3>
+    {#if title}
+        <Label label={title}/>
+    {:else }
+        Related Pages:
+    {/if}
+</h3>
 <List>
     {#each entries as entry}
         {#if getName(entry)}
-            <ListItem><a href={getHref(entry)}>{getName(entry)}</a></ListItem>
+            <ListItem><a href={getHref(entry)}><Label label={getName(entry)}/></a></ListItem>
         {/if}
     {/each}
 </List>
 
 {#if text}
-    <p>{formatPatchouliText(getLabel(text))}</p>
+    <p>{formatPatchouliText(getLabelWithCurrentValues(text))}</p>
 {/if}

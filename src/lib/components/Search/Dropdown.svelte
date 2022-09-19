@@ -7,6 +7,7 @@
     export let duration: number = 100;
     export let parentElement: HTMLElement;
     export let id = 'dropdown' + Math.random().toString(36);
+    export let openLeft = false;
 
     // Toggle Visibility
     // NOTE: 1ms delay required to avoid race condition for select mode
@@ -49,23 +50,12 @@
         // Close when navigating away
         open = false;
     });
-
-    // Responsive Classes
-
-    // Base Classes
-    const cBaseMenu: string = 'relative inline-block';
-    const cBaseContent: string = '';
-
-    // Set content anchor origin
-    let cOrigin: string;
-    $: classesContent = `${cBaseContent} ${cOrigin}`;
-    $: console.log(`dropdown-open: ${open}`)
 </script>
 
 <svelte:body on:click={handleBodyClick}/>
-<!-- Content -->
 {#if open}
-    <div role="menu" class="menu-content absolute z-10 origin-top-right right-5 mt-0.5 bg-surface-500"
+    <div role="menu"
+         class={`menu-content absolute z-10  mt-0.5 bg-surface-500 ${openLeft ? 'origin-top-left left-5' : 'origin-top-right right-5'}`}
          data-testid="menu-content"
          in:fade={{ duration }}
          out:fade={{ duration }} {id}>

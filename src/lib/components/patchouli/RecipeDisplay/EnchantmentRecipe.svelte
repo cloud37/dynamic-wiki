@@ -1,6 +1,6 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
-    import {getLabel} from "$lib/languages.js";
+    import {getLabelWithCurrentValues} from "$lib/languages.js";
     import {getIdFromResourceLocation} from "$lib/utils/idResolver.js";
     import {Card} from "@brainandbones/skeleton";
 
@@ -8,9 +8,9 @@
 
     const getEnchantmentLabel = (label: string) => {
         if (label === 'ars_nouveau:reactive') {
-            return getLabel(`enchantment.ars_nouveau.${getIdFromResourceLocation(label)}`)
+            return getLabelWithCurrentValues(`enchantment.ars_nouveau.${getIdFromResourceLocation(label)}`)
         }
-        return getLabel(`enchantment.minecraft.${getIdFromResourceLocation(label)}`)
+        return getLabelWithCurrentValues(`enchantment.minecraft.${getIdFromResourceLocation(label)}`)
     }
 
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag)

@@ -7,23 +7,23 @@ import {
 
 const getArsNouveauLabel = (label: string): string | undefined => {
 	if (label == 'source_berry') {
-		return getLabel('block.ars_nouveau.sourceberry_bush');
+		return getLabelWithCurrentValues('block.ars_nouveau.sourceberry_bush');
 	}
-	let foundLabel = getLabel(`item.ars_nouveau.${label}`);
+	let foundLabel = getLabelWithCurrentValues(`item.ars_nouveau.${label}`);
 	if (foundLabel.startsWith('item.ars_nouveau')) {
-		foundLabel = getLabel(`block.ars_nouveau.${label}`);
+		foundLabel = getLabelWithCurrentValues(`block.ars_nouveau.${label}`);
 	}
 	// Hail Mary because Glyphs are done in an annoying way
 	if (foundLabel.startsWith('block.ars_nouveau')) {
-		foundLabel = getLabel(`ars_nouveau.glyph_name.glyph_${label}`);
+		foundLabel = getLabelWithCurrentValues(`ars_nouveau.glyph_name.glyph_${label}`);
 	}
 	return foundLabel.startsWith('ars_nouveau.glyph_name.glyph_') ? undefined : foundLabel;
 };
 
 const getMinecraftLabel = (label: string): string | undefined => {
-	let foundLabel = getLabel(`item.minecraft.${label}`);
+	let foundLabel = getLabelWithCurrentValues(`item.minecraft.${label}`);
 	if (foundLabel.startsWith('item.minecraft')) {
-		foundLabel = getLabel(`block.minecraft.${label}`);
+		foundLabel = getLabelWithCurrentValues(`block.minecraft.${label}`);
 	}
 	return foundLabel.startsWith('block.minecraft') ? undefined : foundLabel;
 };
@@ -44,11 +44,30 @@ export const getBlockOrItemLabel = (label: string): string => {
 	return foundLabel || label;
 };
 
-export const getLabel = (label: string): string => {
+export const getLabelWithCurrentValues = (label: string): string => {
 	const languages = get(languagesStore);
 	const chosenLanguage = get(chosenLanguageStore);
 	const minecraftLanguage = get(minecraftLanguageStore);
 
+	if (languages && minecraftLanguage) {
+		const foundLabel =
+			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';
+		if (foundLabel === 'unknown label') {
+			return label;
+		}
+		return foundLabel;
+	} else {
+		console.log('Languages not yet loaded');
+		return 'unknown label';
+	}
+};
+
+export const getLabel = (
+	label: string,
+	languages: App.LanguageDictionary,
+	chosenLanguage: string,
+	minecraftLanguage: App.MinecraftLanguageDictionary
+): string => {
 	if (languages && minecraftLanguage) {
 		const foundLabel =
 			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';

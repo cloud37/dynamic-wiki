@@ -1,9 +1,9 @@
 <script lang="ts">
     import {resolveTag} from "$lib/components/patchouli/RecipeDisplay/tagResolver";
-    import {getLabel} from "$lib/languages.js";
     import {getTexture} from "$lib/textures";
     import {texturesStore} from "$lib/stores/fileStore";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import Label from "$lib/components/Label.svelte";
 
     export let tag: string
 
@@ -17,7 +17,7 @@
     {#if displayAsText}
         <div class="self-center flex flex-col items-center justify-center craftingGridItem">
             <span class="break-words w-full">
-                {getLabel(resolvedTag)}
+                <Label label={resolvedTag}/>
             </span>
         </div>
     {:else }

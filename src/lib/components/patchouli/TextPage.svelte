@@ -1,12 +1,15 @@
 <script lang="ts">
-    import {getLabel} from '$lib/languages.js';
+    import {getLabelWithCurrentValues} from '$lib/languages.js';
     import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
+    import FormattedLabel from "$lib/components/patchouli/FormattedLabel.svelte";
 
     export let text: string;
 
-    $: formattedText = formatPatchouliText(getLabel(text));
+    $: formattedText = formatPatchouliText(getLabelWithCurrentValues(text));
 </script>
 
 
-<p class="text-left max-w-fit textblock">{@html formattedText}</p>
+<p class="text-left max-w-fit textblock">
+    <FormattedLabel label={text}/>
+</p>
 

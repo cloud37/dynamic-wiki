@@ -4,6 +4,8 @@
     import Dropdown from "$lib/components/Search/Dropdown.svelte";
     import {List, ListItem} from "@brainandbones/skeleton";
 
+    export let mobile: false;
+
     let value: string;
     let searchElement: HTMLElement;
 
@@ -38,7 +40,7 @@
         role="combobox"
 >
     <Search bind:value label="Search" on:blur={onBlur} on:focus={onFocus}/>
-    <Dropdown id="search-dropdown" open={focus && !!results} parentElement={searchElement}>
+    <Dropdown id="search-dropdown" open={focus && !!results} openLeft={mobile} parentElement={searchElement}>
         <List slot="content" tag="nav">
             {#each results as result}
                 <ListItem href={result.href}>{result.title}</ListItem>
