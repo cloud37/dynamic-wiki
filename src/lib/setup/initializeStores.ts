@@ -12,6 +12,7 @@ import {
 } from '$lib/setup/loadFiles';
 import { browser } from '$app/environment';
 import { apiBaseURL } from '$lib/utils/apiUtils';
+import { initializeSearch } from '$lib/setup/initializeSearch';
 
 const initalizeMinecraftLanguageStore = (
 	fetch: (info: RequestInfo, init?: RequestInit) => Promise<Response>
@@ -61,6 +62,9 @@ const initalizeDynamicallyLoadedStores = (
 					setTimeout(() => {
 						storesLoaded.set(false);
 					}, 86400000 /* stores should be refreshed after 1 day if the server is on for so long */);
+					if (browser) {
+						initializeSearch(loadedPatchouliCategories, loadedPatchouliEntries);
+					}
 				}
 			);
 		});

@@ -1,14 +1,17 @@
 const config = {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/@brainandbones/skeleton/**/*.{html,js,svelte,ts}'
-	],
+    content: [
+        './src/**/*.{html,js,svelte,ts}',
+        './node_modules/@brainandbones/skeleton/**/*.{html,js,svelte,ts}'
+    ],
 
-	theme: {
-		extend: {}
-	},
-	darkMode: 'class',
-	plugins: [require('@brainandbones/skeleton/tailwind.cjs')]
+    theme: {
+        extend: {}
+    },
+    darkMode: 'class',
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@brainandbones/skeleton/tailwind.cjs')
+    ]
 };
 
 module.exports = config;

@@ -1,92 +1,54 @@
-const getArsNouveauLabel = (
-	label: string,
-	languages: App.LanguageDictionary,
-	chosenLanguage: string,
-	minecraftLanguage: App.MinecraftLanguageDictionary
-): string | undefined => {
+import { get } from 'svelte/store';
+import {
+	chosenLanguageStore,
+	languagesStore,
+	minecraftLanguageStore
+} from '$lib/stores/languageStore';
+
+const getArsNouveauLabel = (label: string): string | undefined => {
 	if (label == 'source_berry') {
-		return getLabel(
-			'block.ars_nouveau.sourceberry_bush',
-			languages,
-			chosenLanguage,
-			minecraftLanguage
-		);
+		return getLabel('block.ars_nouveau.sourceberry_bush');
 	}
-	let foundLabel = getLabel(
-		`item.ars_nouveau.${label}`,
-		languages,
-		chosenLanguage,
-		minecraftLanguage
-	);
+	let foundLabel = getLabel(`item.ars_nouveau.${label}`);
 	if (foundLabel.startsWith('item.ars_nouveau')) {
-		foundLabel = getLabel(
-			`block.ars_nouveau.${label}`,
-			languages,
-			chosenLanguage,
-			minecraftLanguage
-		);
+		foundLabel = getLabel(`block.ars_nouveau.${label}`);
 	}
 	// Hail Mary because Glyphs are done in an annoying way
 	if (foundLabel.startsWith('block.ars_nouveau')) {
-		foundLabel = getLabel(
-			`ars_nouveau.glyph_name.glyph_${label}`,
-			languages,
-			chosenLanguage,
-			minecraftLanguage
-		);
+		foundLabel = getLabel(`ars_nouveau.glyph_name.glyph_${label}`);
 	}
 	return foundLabel.startsWith('ars_nouveau.glyph_name.glyph_') ? undefined : foundLabel;
 };
 
-const getMinecraftLabel = (
-	label: string,
-	languages: App.LanguageDictionary,
-	chosenLanguage: string,
-	minecraftLanguage: App.MinecraftLanguageDictionary
-): string | undefined => {
-	let foundLabel = getLabel(
-		`item.minecraft.${label}`,
-		languages,
-		chosenLanguage,
-		minecraftLanguage
-	);
+const getMinecraftLabel = (label: string): string | undefined => {
+	let foundLabel = getLabel(`item.minecraft.${label}`);
 	if (foundLabel.startsWith('item.minecraft')) {
-		foundLabel = getLabel(`block.minecraft.${label}`, languages, chosenLanguage, minecraftLanguage);
+		foundLabel = getLabel(`block.minecraft.${label}`);
 	}
 	return foundLabel.startsWith('block.minecraft') ? undefined : foundLabel;
 };
 
-export const getBlockOrItemLabel = (
-	label: string,
-	languages: App.LanguageDictionary,
-	chosenLanguage: string,
-	minecraftLanguage: App.MinecraftLanguageDictionary
-): string => {
+export const getBlockOrItemLabel = (label: string): string => {
 	const splitLabel = label.split(':');
 	if (splitLabel.length > 1) {
 		if (splitLabel[0] === 'ars_nouveau') {
-			return (
-				getArsNouveauLabel(splitLabel[1], languages, chosenLanguage, minecraftLanguage) || label
-			);
+			return getArsNouveauLabel(splitLabel[1]) || label;
 		} else {
-			return (
-				getMinecraftLabel(splitLabel[1], languages, chosenLanguage, minecraftLanguage) || label
-			);
+			return getMinecraftLabel(splitLabel[1]) || label;
 		}
 	}
-	let foundLabel = getArsNouveauLabel(label, languages, chosenLanguage, minecraftLanguage);
+	let foundLabel = getArsNouveauLabel(label);
 	if (!foundLabel) {
-		foundLabel = getMinecraftLabel(label, languages, chosenLanguage, minecraftLanguage);
+		foundLabel = getMinecraftLabel(label);
 	}
 	return foundLabel || label;
 };
 
-export const getLabel = (
-	label: string,
-	languages: App.LanguageDictionary,
-	chosenLanguage: string,
-	minecraftLanguage: App.MinecraftLanguageDictionary
-): string => {
+export const getLabel = (label: string): string => {
+	const languages = get(languagesStore);
+	const chosenLanguage = get(chosenLanguageStore);
+	const minecraftLanguage = get(minecraftLanguageStore);
+
 	if (languages && minecraftLanguage) {
 		const foundLabel =
 			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';
