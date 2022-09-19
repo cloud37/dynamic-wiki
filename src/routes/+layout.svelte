@@ -56,7 +56,7 @@
     <svelte:fragment slot="pageFooter">
         <footer class="flex justify-end mb-1 mr-1 appFooter"><p>Ars Nouveau Wiki</p></footer>
     </svelte:fragment>
-    <div class="m-4" style="min-height: 91vh;">
+    <div class="m-4 page">
         <slot/>
     </div>
 </AppShell>
