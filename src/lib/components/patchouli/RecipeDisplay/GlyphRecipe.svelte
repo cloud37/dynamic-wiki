@@ -8,7 +8,7 @@
     $: mappedInputItems = recipeData.inputItems.map(ingredient => ingredient.item || ingredient.tag)
 </script>
 
-<h4>Glyph Recipe</h4>
+<h4 class="mb-3">Glyph Recipe</h4>
 <div class="craftingRecipe">
     <Card>
         <div class="grid grid-rows-3 grid-cols-3 gap-2">

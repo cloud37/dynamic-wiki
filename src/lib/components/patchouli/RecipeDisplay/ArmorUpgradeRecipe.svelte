@@ -7,7 +7,7 @@
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
 </script>
 
-<h4>Enchanting Apparatus Recipe</h4>
+<h4 class="mb-3">Enchanting Apparatus Recipe</h4>
 <div class="craftingRecipe">
     <Card body="flex flex-col items-center">
         Pedestal Items:

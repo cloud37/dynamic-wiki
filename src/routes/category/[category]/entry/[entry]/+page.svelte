@@ -15,10 +15,13 @@
 <svelte:head><title>{entryName}</title></svelte:head>
 
 <h2 class="text-center">{entryName}</h2>
-<div class="flex flex-col justify-start items-center h-full m-4">
-    <div class="flex flex-col">
-        {#each displayedEntry?.pages as page}
-            <PatchouliPage patchouliPage={page}/>
-        {/each}
+<div class="flex justify-center">
+    <div class="flex flex-col justify-start items-start max-w-prose h-full m-4">
+        <div class="flex flex-col">
+            {#each displayedEntry?.pages as page}
+                <PatchouliPage patchouliPage={page}/>
+            {/each}
+        </div>
     </div>
 </div>
+

@@ -20,8 +20,8 @@
     $: craftingGrid = prepareRecipe(recipeData)
 </script>
 
-<h4>Shaped Recipe:</h4>
-<div class="flex items-center justify-around">
+<h4 class="mb-3">Shaped Recipe:</h4>
+<div class="craftingRecipe">
     <Card>
         <div class="grid grid-rows-3 grid-cols-3 gap-2">
             {#each craftingGrid as craftingGridSlot}
