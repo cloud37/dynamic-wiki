@@ -20,15 +20,15 @@
 <h4>Enchanting Apparatus Recipe</h4>
 <div class="flex items-center justify-around mt-3">
     <Card body="flex flex-col items-center">
-        Pedestal Items:
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+        <span>Pedestal Items:</span>
+        <div class="grid grid-cols-3 gap-2">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
     </Card>
     +
-    <Card body="flex flex-col items-center">
+    <Card body="flex flex-col items-center justify-center craftingGridItem">
         Item to be enchanted
         {#if recipeData.level > 1}
             *
@@ -36,7 +36,10 @@
     </Card>
     {#if recipeData.sourceCost}
         +
-        <Card>Source: {recipeData.sourceCost}</Card>
+        <Card body="flex flex-col items-center justify-center craftingGridItem">
+            <span>Source: </span>
+            <span>{recipeData.sourceCost}</span>
+        </Card>
     {/if}
     =>
     <Card>

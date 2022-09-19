@@ -52,7 +52,8 @@
     $: showImage = !notDisplayableItems.includes(item);
 </script>
 
-<div class="self-center flex flex-col items-center">
-    {#if showImage}<img alt={`picture of the ingredient ${item}`} height="75px" {src} width="75px"/>{/if}
+<div class="self-center flex flex-col items-center justify-center craftingGridItem">
+    {#if showImage}<img alt={`picture of the ingredient ${item}`} {src} class="craftingGridPicture"
+                        style="image-rendering: pixelated"/>{/if}
     <span class="text-center break-words w-full">{displayText}</span>
 </div>

@@ -12,11 +12,11 @@
 <h4>Enchanting Apparatus Recipe</h4>
 <div class="flex items-center justify-around mt-3">
     <Card body="flex flex-col items-center">
-        Pedestal Items (Will not be consumed):
+        <span>Pedestal Items (Will not be consumed):</span>
         {#if !mappedInputItems || mappedInputItems.length === 0}
-            No Pedestal Items are necessary
+            <span>No Pedestal Items are necessary</span>
         {:else }
-            <div class="grid grid-rows-3 grid-cols-3 gap-2">
+            <div class="grid grid-cols-3 gap-2">
                 {#each mappedInputItems as ingredient}
                     <Ingredient {ingredient}/>
                 {/each}
@@ -25,15 +25,14 @@
 
     </Card>
     +
-    <Card>
-        <div class="flex flex-col items-center">
-            Reagent:
-            <Ingredient ingredient={recipeData.input}/>
-        </div>
+    <Card body="flex flex-col items-center justify-center craftingGridItem">
+        Reagent:
+        <Ingredient ingredient={recipeData.input}/>
     </Card>
     +
-    <Card>
-        Source: {recipeData.source}*
+    <Card body="flex flex-col items-center justify-center craftingGridItem">
+        <span>Source: </span>
+        <span>{recipeData.source}*</span>
     </Card>
 
     =>

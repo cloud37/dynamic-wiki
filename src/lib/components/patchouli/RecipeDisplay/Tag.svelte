@@ -16,7 +16,11 @@
 
 {#if resolvedTag}
     {#if displayAsText}
-        <span class="self-center">{getLabel(resolvedTag, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}</span>
+        <div class="self-center flex flex-col items-center justify-center craftingGridItem">
+            <span>
+                {getLabel(resolvedTag, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
+            </span>
+        </div>
     {:else }
         <Item item={resolvedTag}/>
     {/if}
