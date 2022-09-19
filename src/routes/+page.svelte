@@ -5,8 +5,7 @@
     <p>Welcome to the automatically generated Wiki of Ars Nouveau!</p>
     <p>This Wiki is automatically generated from the Patchouli Files in the Ars Nouveau Repository.
         Therefore, there's some things that just can't be displayed, like the GeckoLib-Rendered Spellbook, Blocks,
-        Keybinds and
-        other things.
+        Keybinds and other things.
         It can also be a bit janky, with missing names or unexpected errors.</p>
     <p>If you encounter any issues, please reach out in the Ars Nouveau Discord found <a
             href="/category/mod_news/entry/mod_news">here!</a></p>
