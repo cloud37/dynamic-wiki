@@ -11,7 +11,7 @@
 <h4 class="mb-3">Shapeless Recipe</h4>
 <div class="craftingRecipe">
     <Card>
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+        <div class="craftingGrid">
             {#each recipeData.ingredients as ingredient}
                 <Ingredient {ingredient}/>
             {/each}

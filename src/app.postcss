@@ -11,6 +11,15 @@ body {
     @apply flex flex-col lg:flex-row items-center justify-around mt-3 mb-5
 }
 
+.textblock {
+    min-width: 65ch;
+}
+
+.craftingGrid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, minmax(90px, 1fr))
+}
 
 .craftingGridItem {
     width: 90px;
@@ -23,12 +32,16 @@ body {
 }
 @media (min-width: 1024px) {
     .craftingGridItem {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
     }
 
     .craftingGridPicture {
-        width: 75px;
-        height: 75px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .craftingGrid {
+        grid-template-columns: repeat(3, minmax(110px, 1fr))
     }
 }

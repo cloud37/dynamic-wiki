@@ -9,5 +9,5 @@
 </script>
 
 
-<p class="text-left max-w-fit">{@html formattedText}</p>
+<p class="text-left max-w-fit textblock">{@html formattedText}</p>
 

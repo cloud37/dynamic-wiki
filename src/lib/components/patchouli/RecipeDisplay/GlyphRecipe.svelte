@@ -11,15 +11,16 @@
 <h4 class="mb-3">Glyph Recipe</h4>
 <div class="craftingRecipe">
     <Card>
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+        <div class="craftingGrid">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
     </Card>
     +
-    <Card body="flex flex-col items-center">
-        EXP-Cost: {recipeData.exp}
+    <Card body="flex flex-col items-center justify-center craftingGridItem">
+        <span>EXP-Cost:</span>
+        <span>{recipeData.exp}</span>
     </Card>
 
     =>

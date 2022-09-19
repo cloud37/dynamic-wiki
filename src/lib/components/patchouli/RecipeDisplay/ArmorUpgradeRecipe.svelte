@@ -11,7 +11,7 @@
 <div class="craftingRecipe">
     <Card body="flex flex-col items-center">
         Pedestal Items:
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+        <div class="craftingGrid">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}

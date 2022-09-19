@@ -16,7 +16,7 @@
         {#if !mappedInputItems || mappedInputItems.length === 0}
             <span>No Pedestal Items are necessary</span>
         {:else }
-            <div class="grid grid-cols-3 gap-2">
+            <div class="craftingGrid">
                 {#each mappedInputItems as ingredient}
                     <Ingredient {ingredient}/>
                 {/each}

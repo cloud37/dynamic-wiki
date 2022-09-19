@@ -17,7 +17,7 @@
 {#if resolvedTag}
     {#if displayAsText}
         <div class="self-center flex flex-col items-center justify-center craftingGridItem">
-            <span>
+            <span class="break-words w-full">
                 {getLabel(resolvedTag, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
             </span>
         </div>

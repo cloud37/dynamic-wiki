@@ -23,7 +23,7 @@
 <h4 class="mb-3">Shaped Recipe:</h4>
 <div class="craftingRecipe">
     <Card>
-        <div class="grid grid-rows-3 grid-cols-3 gap-2">
+        <div class="craftingGrid">
             {#each craftingGrid as craftingGridSlot}
                 {#if craftingGridSlot}
                     <Ingredient ingredient={craftingGridSlot}/>

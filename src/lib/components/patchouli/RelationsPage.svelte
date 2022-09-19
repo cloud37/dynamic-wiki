@@ -24,7 +24,9 @@
 <h3>{title ? getLabel(title, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore) || 'Related Pages:' : 'Related Pages:'}</h3>
 <List>
     {#each entries as entry}
-        <ListItem><a href={getHref(entry)}>{getName(entry)}</a></ListItem>
+        {#if getName(entry)}
+            <ListItem><a href={getHref(entry)}>{getName(entry)}</a></ListItem>
+        {/if}
     {/each}
 </List>
 
