@@ -3,7 +3,6 @@
     import {getLabel} from "$lib/languages.js";
     import {getTexture} from "$lib/textures";
     import {texturesStore} from "$lib/stores/fileStore";
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
 
     export let tag: string
@@ -18,7 +17,7 @@
     {#if displayAsText}
         <div class="self-center flex flex-col items-center justify-center craftingGridItem">
             <span class="break-words w-full">
-                {getLabel(resolvedTag, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
+                {getLabel(resolvedTag)}
             </span>
         </div>
     {:else }

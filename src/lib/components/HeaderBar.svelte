@@ -2,7 +2,9 @@
     import {AppBar, LightSwitch} from '@brainandbones/skeleton';
     import {storeMobileDrawer} from '$lib/stores/uiState';
     import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
-    import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
+    import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
+    import {browser} from '$app/environment'
+    import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
 
     // Drawer Handler
     function drawerOpen(): void {
@@ -24,4 +26,9 @@
             href="/"
             title="Return to main page">Ars Nouveau Wiki</a
     >
+    <svelte:fragment slot="trail">
+        {#if browser}
+            <SmartSearch/>
+        {/if}
+    </svelte:fragment>
 </AppBar>

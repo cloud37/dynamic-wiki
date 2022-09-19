@@ -34,7 +34,7 @@ declare namespace App {
 			| string;
 		recipe?: string;
 		text?: string;
-		entries?: Array<string>;
+		entries?: Array<string>; // Links in the Relations Page
 		title?: string;
 
 		[x: string]: string;
@@ -152,5 +152,11 @@ declare namespace App {
 
 	export interface MinecraftLanguageDictionary {
 		[x: string]: string;
+	}
+
+	export interface SearchCandidate {
+		title: string;
+		text: string;
+		href: string;
 	}
 }

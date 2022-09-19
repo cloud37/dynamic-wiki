@@ -28,27 +28,26 @@
 
 <script lang="ts">
     import {texturesStore} from "$lib/stores/fileStore";
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
     import {getBlockOrItemLabel, getLabel} from "$lib/languages";
 
     export let item: string;
 
-    const getDisplayText = (item: string, languages: App.LanguageDictionary, chosenLanguage: string, minecraftLanguage: App.MinecraftLanguageDictionary) => {
+    const getDisplayText = (item: string) => {
         if (notDisplayableItems.includes(item)) {
             const splitItem = item.split(":");
             if (splitItem[0] === 'ars_nouveau') {
-                return getBlockOrItemLabel(splitItem[1], languages, chosenLanguage, minecraftLanguage);
+                return getBlockOrItemLabel(splitItem[1]);
             } else {
-                return getLabel(`block.minecraft.${splitItem[1]}`, languages, chosenLanguage, minecraftLanguage);
+                return getLabel(`block.minecraft.${splitItem[1]}`);
             }
         } else {
-            return getBlockOrItemLabel(item, languages, chosenLanguage, minecraftLanguage);
+            return getBlockOrItemLabel(item);
         }
     }
 
     $: src = item ? getItemSrc(item, $texturesStore) : 'missingitem';
-    $: displayText = item ? getDisplayText(item, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore) : 'misingitem';
+    $: displayText = item ? getDisplayText(item) : 'misingitem';
     $: showImage = !notDisplayableItems.includes(item);
 </script>
 

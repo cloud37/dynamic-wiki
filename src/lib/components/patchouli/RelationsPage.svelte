@@ -3,7 +3,6 @@
     import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
     import {patchouliStore} from "$lib/stores/fileStore";
     import {List, ListItem} from "@brainandbones/skeleton";
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore";
 
     export let title: string;
     export let entries: Array<string>;
@@ -16,12 +15,12 @@
     }
     const getName = (entry: string) => {
         const pathParts = entry.split(":").pop().split("/")
-        return getLabel($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)
+        return getLabel($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name)
     }
 
 </script>
 
-<h3>{title ? getLabel(title, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore) || 'Related Pages:' : 'Related Pages:'}</h3>
+<h3>{title ? getLabel(title) || 'Related Pages:' : 'Related Pages:'}</h3>
 <List>
     {#each entries as entry}
         {#if getName(entry)}
@@ -31,5 +30,5 @@
 </List>
 
 {#if text}
-    <p>{formatPatchouliText(getLabel(text, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore))}</p>
+    <p>{formatPatchouliText(getLabel(text))}</p>
 {/if}
