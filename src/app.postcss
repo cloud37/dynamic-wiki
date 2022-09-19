@@ -1,10 +1,14 @@
 html,
 body {
-	@apply h-screen overflow-hidden;
+    @apply h-screen overflow-hidden;
 }
 
 .dark p {
-       color: rgb(var(--color-surface-300) / var(--tw-text-opacity));
+    color: rgb(var(--color-surface-300) / var(--tw-text-opacity));
+}
+
+.craftingRecipe {
+    @apply flex flex-col lg:flex-row items-center justify-around mt-3
 }
 
 .craftingGridItem {

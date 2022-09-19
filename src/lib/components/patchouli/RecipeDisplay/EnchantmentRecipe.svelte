@@ -18,7 +18,7 @@
 </script>
 
 <h4>Enchanting Apparatus Recipe</h4>
-<div class="flex items-center justify-around mt-3">
+<div class="craftingRecipe">
     <Card body="flex flex-col items-center">
         <span>Pedestal Items:</span>
         <div class="grid grid-cols-3 gap-2">
