@@ -55,7 +55,7 @@
 <svelte:body on:click={handleBodyClick}/>
 {#if open}
     <div role="menu"
-         class={`menu-content absolute z-10  mt-0.5 bg-surface-500 ${openLeft ? 'origin-top-left left-5' : 'origin-top-right right-5'}`}
+         class={`menu-content absolute z-10  mt-0.5 searchDropdown ${openLeft ? 'origin-top-left left-5' : 'origin-top-right right-5'}`}
          data-testid="menu-content"
          in:fade={{ duration }}
          out:fade={{ duration }} {id}>
