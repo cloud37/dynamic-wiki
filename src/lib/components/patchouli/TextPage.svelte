@@ -1,14 +1,15 @@
 <script lang="ts">
-    import {getLabelWithCurrentValues} from '$lib/languages.js';
-    import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
     import FormattedLabel from "$lib/components/patchouli/FormattedLabel.svelte";
 
     export let text: string;
-
-    $: formattedText = formatPatchouliText(getLabelWithCurrentValues(text));
+    export let title: string;
 </script>
 
-
+{#if title}
+    <h4 class="mb-3">
+        <FormattedLabel label={title}/>
+    </h4>
+{/if}
 <p class="text-left max-w-fit textblock">
     <FormattedLabel label={text}/>
 </p>

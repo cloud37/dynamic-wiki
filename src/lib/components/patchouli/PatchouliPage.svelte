@@ -4,6 +4,7 @@
     import LinkPage from '$lib/components/patchouli/LinkPage.svelte';
     import RelationsPage from "$lib/components/patchouli/RelationsPage.svelte";
     import ArsPage from "$lib/components/patchouli/ArsPage.svelte";
+    import ImagePage from "$lib/components/patchouli/ImagePage.svelte";
 
     export let patchouliPage: App.PatchouliPage;
 
@@ -17,6 +18,8 @@
                 return LinkPage;
             case 'patchouli:relations':
                 return RelationsPage;
+            case 'patchouli:image':
+                return ImagePage;
             case 'ars_nouveau:apparatus_recipe':
             case 'ars_nouveau:imbuement_recipe':
             case 'ars_nouveau:enchanting_recipe':

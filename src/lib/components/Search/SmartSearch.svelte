@@ -26,7 +26,6 @@
     }
 
     $: results = getSearchResults(value).slice(0, 5).map(foundValue => foundValue.item)
-    $: console.log(`focus: ${focus} results: ${results}`)
 </script>
 
 <div

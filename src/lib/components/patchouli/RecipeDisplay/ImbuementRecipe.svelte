@@ -5,7 +5,6 @@
 
     export let recipeData: App.ImbuementRecipe;
 
-    $: console.log(recipeData)
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
 </script>
 

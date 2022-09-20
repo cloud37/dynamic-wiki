@@ -3,7 +3,10 @@ import type { JSZipObject } from 'jszip';
 import { getFileName } from '../utils/fileName';
 
 const isTexture = (zipObject: JSZipObject) =>
-	!zipObject.dir && zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/items');
+	!zipObject.dir &&
+	(zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/items') ||
+		// Images in Patchouli Book
+		zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/gui/entries'));
 export const isPatchouliCategory = (zipObject: JSZipObject) =>
 	!zipObject.dir &&
 	zipObject.name.includes(
