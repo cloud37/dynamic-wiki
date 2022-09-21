@@ -1,7 +1,6 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
-    import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.GlyphRecipe;
 
@@ -10,21 +9,21 @@
 
 <h4 class="mb-3">Glyph Recipe</h4>
 <div class="craftingRecipe">
-    <Card>
+    <div class="card card-body">
         <div class="craftingGrid">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
-    </Card>
+    </div>
     +
-    <Card body="flex flex-col items-center justify-center craftingGridItem">
+    <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         <span>EXP-Cost:</span>
         <span>{recipeData.exp}</span>
-    </Card>
+    </div>
 
     =>
-    <Card>
+    <div class="card card-body">
         <Item item={recipeData.output.replace("glyph_", "")}/>
-    </Card>
+    </div>
 </div>

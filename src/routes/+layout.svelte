@@ -1,10 +1,6 @@
 <script lang="ts">
-    import '@brainandbones/skeleton/styles/themes/theme-modern.css';
-    import '@brainandbones/skeleton/styles/tailwind.css';
-    import '@brainandbones/skeleton/styles/core.css';
-    import '@brainandbones/skeleton/styles/forms.css';
-    import '@brainandbones/skeleton/styles/typography.css';
     import '../theme.postcss';
+    import '@brainandbones/skeleton/styles/all.css';
     import '../app.postcss';
     import {AppShell} from '@brainandbones/skeleton';
     import {page} from '$app/stores';

@@ -1,64 +1,72 @@
 html,
 body {
-    @apply h-screen overflow-hidden;
+	@apply h-screen overflow-hidden;
+}
+
+.list-nav a {
+	@apply rounded-none;
 }
 
 .dark p {
-    color: rgb(var(--color-surface-300) / var(--tw-text-opacity));
+	color: rgb(var(--color-surface-300) / var(--tw-text-opacity));
 }
 
 .searchDropdown {
-    @apply bg-surface-300
+	@apply bg-surface-300;
 }
 
 .dark .searchDropdown {
-    @apply bg-surface-500
+	@apply bg-surface-500;
 }
 
 .craftingRecipe {
-    @apply flex flex-col lg:flex-row items-center justify-around mt-3 mb-5
+	@apply flex flex-col lg:flex-row items-center justify-around mt-3 mb-5;
 }
 
 .textblock {
-    min-width: 80vw;
+	min-width: 80vw;
 }
 
 .craftingGrid {
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: repeat(3, minmax(90px, 1fr))
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(3, minmax(90px, 1fr));
 }
 
 .craftingGridItem {
-    width: 90px;
-    height: 90px;
+	width: 90px;
+	height: 90px;
 }
 
 .craftingGridPicture {
-    width: 50px;
-    height: 50px;
+	width: 50px;
+	height: 50px;
+}
+
+.navSelected {
+    @apply !bg-primary-500 !text-white
 }
 
 @media (min-width: 1024px) {
-    .craftingGridItem {
-        width: 110px;
-        height: 110px;
-    }
+	.craftingGridItem {
+		width: 110px;
+		height: 110px;
+	}
 
-    .craftingGridPicture {
-        width: 65px;
-        height: 65px;
-    }
+	.craftingGridPicture {
+		width: 65px;
+		height: 65px;
+	}
 
-    .craftingGrid {
-        grid-template-columns: repeat(3, minmax(110px, 1fr))
-    }
+	.craftingGrid {
+		grid-template-columns: repeat(3, minmax(110px, 1fr));
+	}
 
-    .textblock {
-        min-width: 65ch;
-    }
+	.textblock {
+		min-width: 65ch;
+	}
 
-    .page {
-        min-height: 88vh;
-    }
+	.page {
+		min-height: 88vh;
+	}
 }

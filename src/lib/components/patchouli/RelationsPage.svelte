@@ -2,7 +2,6 @@
     import {getLabelWithCurrentValues} from '$lib/languages.js';
     import {formatPatchouliText} from "$lib/components/patchouli/patchouliFormatter";
     import {patchouliStore} from "$lib/stores/fileStore";
-    import {List, ListItem} from "@brainandbones/skeleton";
     import Label from "$lib/components/Label.svelte";
 
     export let title: string;
@@ -32,13 +31,13 @@
         Related Pages:
     {/if}
 </h3>
-<List>
+<ul class="list">
     {#each entries as entry}
         {#if getName(entry)}
-            <ListItem><a href={getHref(entry)}><Label label={getName(entry)}/></a></ListItem>
+            <li><a href={getHref(entry)}><Label label={getName(entry)}/></a></li>
         {/if}
     {/each}
-</List>
+</ul>
 
 {#if text}
     <p>{formatPatchouliText(getLabelWithCurrentValues(text))}</p>

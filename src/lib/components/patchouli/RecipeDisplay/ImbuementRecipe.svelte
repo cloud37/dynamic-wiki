@@ -1,7 +1,6 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
-    import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.ImbuementRecipe;
 
@@ -10,7 +9,7 @@
 
 <h4 class="mb-3">Enchanting Apparatus Recipe</h4>
 <div class="craftingRecipe">
-    <Card body="flex flex-col items-center">
+    <div class="card card-body flex flex-col items-center">
         <span>Pedestal Items (Will not be consumed):</span>
         {#if !mappedInputItems || mappedInputItems.length === 0}
             <span>No Pedestal Items are necessary</span>
@@ -22,22 +21,22 @@
             </div>
         {/if}
 
-    </Card>
+    </div>
     +
-    <Card body="flex flex-col items-center justify-center craftingGridItem">
+    <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         Reagent:
         <Ingredient ingredient={recipeData.input}/>
-    </Card>
+    </div>
     +
-    <Card body="flex flex-col items-center justify-center craftingGridItem">
+    <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         <span>Source: </span>
         <span>{recipeData.source}*</span>
-    </Card>
+    </div>
 
     =>
-    <Card>
+    <div class="card card-body">
         <Item item={recipeData.output}/>
-    </Card>
+    </div>
 </div>
 <p class="text-center">*Source slowly accumulates on it's own in the Imbuement Chamber. Provide a full Source Jar for
     quicker crafting</p>

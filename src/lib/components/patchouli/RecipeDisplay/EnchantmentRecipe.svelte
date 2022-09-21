@@ -2,7 +2,6 @@
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import {getLabelWithCurrentValues} from "$lib/languages.js";
     import {getIdFromResourceLocation} from "$lib/utils/idResolver.js";
-    import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.EnchantmentRecipe;
 
@@ -18,32 +17,32 @@
 
 <h4 class="mb-3">Enchanting Apparatus Recipe</h4>
 <div class="craftingRecipe">
-    <Card body="flex flex-col items-center">
+    <div class="card card-body flex flex-col items-center">
         <span>Pedestal Items:</span>
         <div class="craftingGrid">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
-    </Card>
+    </div>
     +
-    <Card body="flex flex-col items-center justify-center craftingGridItem">
+    <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         Item to be enchanted
         {#if recipeData.level > 1}
             *
         {/if}
-    </Card>
+    </div>
     {#if recipeData.sourceCost}
         +
-        <Card body="flex flex-col items-center justify-center craftingGridItem">
+        <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
             <span>Source: </span>
             <span>{recipeData.sourceCost}</span>
-        </Card>
+        </div>
     {/if}
     =>
-    <Card>
+    <div class="card card-body">
         {`The Enchantment ${getEnchantmentLabel(recipeData.enchantment)} at level ${recipeData.level} will be applied to your item`}
-    </Card>
+    </div>
 </div>
 
 {#if recipeData.level > 1}

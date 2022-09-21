@@ -33,20 +33,18 @@
                 <Label label={category.name}/>
             </a>
         </div>
-
-        <List label={getLabel(category.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
-              selected={storeCurrentUrl} tag="nav"
-              highlight="!bg-primary-500 !text-white">
-            {#each Object.entries(category.entries) as [id, entry]}
-                <ListItem
-                        href={`/category/${entry.category}/entry/${id}`}
-                        value={`/category/${entry.category}/entry/${id}`}
-                        on:click={onListItemClick}
-                >
-                    <span><Label label={entry.name}/></span>
-                </ListItem>
-            {/each}
-        </List>
+        <nav class="list-nav">
+            <ul>
+                {#each Object.entries(category.entries) as [id, entry]}
+                    {@const href=`/category/${entry.category}/entry/${id}`}
+                        <a {href} on:click={onListItemClick} class:navSelected={$storeCurrentUrl === href}>
+                            <span class="flex-auto">
+                                <Label label={entry.name}/>
+                            </span>
+                        </a>
+                {/each}
+            </ul>
+        </nav>
         {#if i + 1 < sortedCategories.length}
             <Divider class="my-4 opacity-40"/>
         {/if}

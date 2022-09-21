@@ -13,7 +13,6 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
-    import {Card} from "@brainandbones/skeleton";
 
     export let recipeData: App.ShapedRecipe;
 
@@ -22,7 +21,7 @@
 
 <h4 class="mb-3">Shaped Recipe:</h4>
 <div class="craftingRecipe">
-    <Card>
+    <div class="card card-body">
         <div class="craftingGrid">
             {#each craftingGrid as craftingGridSlot}
                 {#if craftingGridSlot}
@@ -32,9 +31,9 @@
                 {/if}
             {/each}
         </div>
-    </Card>
+    </div>
     =>
-    <Card>
+    <div class="card card-body">
         <Item item={recipeData.result.item}/>
-    </Card>
+    </div>
 </div>

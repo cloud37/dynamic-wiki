@@ -1,6 +1,4 @@
 <script lang="ts">
-
-    import {Card} from "@brainandbones/skeleton";
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
 
     export let recipeData: App.ArmorUpgradeRecipe;
@@ -9,27 +7,27 @@
 
 <h4 class="mb-3">Enchanting Apparatus Recipe</h4>
 <div class="craftingRecipe">
-    <Card body="flex flex-col items-center">
+    <div class="card card-body flex flex-col items-center">
         Pedestal Items:
         <div class="craftingGrid">
             {#each mappedInputItems as ingredient}
                 <Ingredient {ingredient}/>
             {/each}
         </div>
-    </Card>
+    </div>
     +
-    <Card>
+    <div class="card card-body">
         <div class="flex flex-col items-center">
             Reagent:
             <span>The Armor Piece you want to upgrade</span>
         </div>
-    </Card>
+    </div>
     {#if recipeData.sourceCost}
         +
-        <Card>Source: {recipeData.sourceCost}</Card>
+        <div class="card card-body">Source: {recipeData.sourceCost}</div>
     {/if}
     =>
-    <Card>
+    <div class="card card-body">
         {`The Tier of your Armor Piece will have increased to ${recipeData.tier + 1}`}
-    </Card>
+    </div>
 </div>

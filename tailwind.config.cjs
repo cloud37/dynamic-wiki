@@ -10,7 +10,7 @@ const config = {
     darkMode: 'class',
     plugins: [
         require('@tailwindcss/forms'),
-        require('@brainandbones/skeleton/tailwind.cjs')
+        require("@brainandbones/skeleton/tailwind/theme.cjs")
     ]
 };
 
