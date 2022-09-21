@@ -37,11 +37,13 @@
             <ul>
                 {#each Object.entries(category.entries) as [id, entry]}
                     {@const href=`/category/${entry.category}/entry/${id}`}
+                    <li>
                         <a {href} on:click={onListItemClick} class:navSelected={$storeCurrentUrl === href}>
                             <span class="flex-auto">
                                 <Label label={entry.name}/>
                             </span>
                         </a>
+                    </li>
                 {/each}
             </ul>
         </nav>
