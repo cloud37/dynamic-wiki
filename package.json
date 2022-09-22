@@ -15,7 +15,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@brainandbones/skeleton": "file:brainandbones-skeleton-0.37.32.tgz",
+    "@brainandbones/skeleton": "^0.41.48",
     "@floating-ui/dom": "^1.0.1",
     "@playwright/test": "^1.25.0",
     "@sveltejs/adapter-auto": "next",
