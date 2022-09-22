@@ -3,7 +3,7 @@
     import Search from "$lib/components/Search/Search.svelte";
     import Dropdown from "$lib/components/Search/Dropdown.svelte";
 
-    export let mobile: false;
+    export let mobile = false;
 
     let value: string;
     let searchElement: HTMLElement;
@@ -37,7 +37,7 @@
         data-svelte-typeahead
         role="combobox"
 >
-    <Search bind:value label="Search" on:blur={onBlur} on:focus={onFocus}/>
+    <Search bind:value on:blur={onBlur} on:focus={onFocus}/>
     <Dropdown id="search-dropdown" open={focus && !!results} openLeft={mobile} parentElement={searchElement}>
         <nav class="list-nav" slot="content">
             <ul>

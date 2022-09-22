@@ -1,13 +1,11 @@
 <script lang="ts">
-    import {getLabel} from '$lib/languages.js';
     import {storeCurrentUrl} from '$lib/stores/uiState.js';
     import {patchouliStore} from '$lib/stores/fileStore';
     import {storeMobileDrawer} from '$lib/stores/uiState';
-    import {Divider, List, ListItem} from '@brainandbones/skeleton';
+    import {Divider} from '@brainandbones/skeleton';
     import {afterNavigate} from '$app/navigation';
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
     import Label from "$lib/components/Label.svelte";
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore";
 
 
     export let embedded: boolean = false;
