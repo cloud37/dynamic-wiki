@@ -1,6 +1,7 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import Arrow from "$lib/components/icons/Arrow.svelte";
 
     export let recipeData: App.ShapelessRecipe;
 
@@ -16,7 +17,7 @@
             {/each}
         </div>
     </div>
-    =>
+    <Arrow/>
     <div class="card card-body">
         <Item item={recipeData.result.item}/>
     </div>

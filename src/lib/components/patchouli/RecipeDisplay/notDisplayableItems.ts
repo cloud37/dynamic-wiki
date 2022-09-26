@@ -25,6 +25,7 @@ export const notDisplayableItems = [
 	'ars_nouveau:potion_diffuser',
 	'ars_nouveau:source_jar',
 	'ars_nouveau:potion_jar',
+	'ars_nouveau:mob_jar',
 	'ars_nouveau:potion_melder',
 	'ars_nouveau:ritual_brazier',
 	'ars_nouveau:scribes_table',

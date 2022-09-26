@@ -1,6 +1,8 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import Plus from "$lib/components/icons/Plus.svelte";
+    import Arrow from "$lib/components/icons/Arrow.svelte";
 
     export let recipeData: App.EnchantingApparatusRecipe;
     $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
@@ -16,7 +18,7 @@
             {/each}
         </div>
     </div>
-    +
+    <Plus/>
     <div class="card card-body">
         <div class="flex flex-col items-center justify-center craftingGridItem">
             Reagent:
@@ -31,7 +33,7 @@
             <span>{recipeData.sourceCost}</span>
         </div>
     {/if}
-    =>
+    <Arrow/>
     <div class="card card-body">
         <Item item={recipeData.output.item}/>
     </div>

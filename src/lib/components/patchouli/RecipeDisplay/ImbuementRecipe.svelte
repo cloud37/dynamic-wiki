@@ -1,6 +1,8 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import Plus from "$lib/components/icons/Plus.svelte";
+    import Arrow from "$lib/components/icons/Arrow.svelte";
 
     export let recipeData: App.ImbuementRecipe;
 
@@ -22,18 +24,17 @@
         {/if}
 
     </div>
-    +
+    <Plus/>
     <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         Reagent:
         <Ingredient ingredient={recipeData.input}/>
     </div>
-    +
+    <Plus/>
     <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         <span>Source: </span>
         <span>{recipeData.source}*</span>
     </div>
-
-    =>
+    <Arrow/>
     <div class="card card-body">
         <Item item={recipeData.output}/>
     </div>

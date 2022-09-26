@@ -1,6 +1,8 @@
 <script lang="ts">
     import Ingredient from "$lib/components/patchouli/RecipeDisplay/Ingredient.svelte";
     import Item from "$lib/components/patchouli/RecipeDisplay/Item.svelte";
+    import Arrow from "$lib/components/icons/Arrow.svelte";
+    import Plus from "$lib/components/icons/Plus.svelte";
 
     export let recipeData: App.GlyphRecipe;
 
@@ -16,13 +18,13 @@
             {/each}
         </div>
     </div>
-    +
+    <Plus/>
     <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
         <span>EXP-Cost:</span>
         <span>{recipeData.exp}</span>
     </div>
 
-    =>
+    <Arrow/>
     <div class="card card-body">
         <Item item={recipeData.output.replace("glyph_", "")}/>
     </div>
