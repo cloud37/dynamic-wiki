@@ -26,12 +26,12 @@
 
 <div class="mb-8 {$$props.class || ''}">
     {#each sortedCategories as category, i}
-        <div class="text-primary-500 text-sm font-bold uppercase p-4">
-            <a href={`/category/${category.id}`} style="text-decoration-line: none">
-                <Label label={category.name}/>
-            </a>
-        </div>
         <nav class="list-nav">
+            <div class="text-primary-500 font-bold uppercase">
+                <a href={`/category/${category.id}`} class="no-underline text-primary-500">
+                    <Label label={category.name}/>
+                </a>
+            </div>
             <ul>
                 {#each Object.entries(category.entries) as [id, entry]}
                     {@const href=`/category/${entry.category}/entry/${id}`}
